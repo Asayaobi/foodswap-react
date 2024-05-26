@@ -1,6 +1,11 @@
+import Reviews from "./Reviews"
+
 function Food() {
     return ( 
-    <div>Hello from Food</div>
+        <>
+            <div>Hello from Food</div>
+            <Reviews />
+        </>
     )
 }
 
