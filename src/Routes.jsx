@@ -5,6 +5,7 @@ import Bookings from './components/Bookings'
 import Food from './components/Food'
 import FoodEdit from "./components/FoodEdit"
 import Listings from "./components/Listings"
+import LogIn from "./components/LogIn"
 
 function Router() {
     return (
@@ -15,6 +16,7 @@ function Router() {
             <Route path="/food/:id" element={<Food />} />
             <Route path="/food/:id/edit" element={<FoodEdit />} />
             <Route path="/listings" element={<Listings />} />
+            <Route path="/login" element={<LogIn />} />
 
 
         </Routes>
