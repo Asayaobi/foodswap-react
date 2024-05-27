@@ -1,10 +1,12 @@
 import Nav from './Nav'
+import Header from './Header'
 import Filter from './Filter'
 
 function FoodList() {
   return (
     <>
       <Nav />
+      <Header />
       <Filter />
       <div className="container mx-auto grid grid-cols-3 justify-items-center gap-10 bg-pink-100">
         <div className=" bg-pink-400 w-80 h-64">card1</div>
