@@ -46,20 +46,17 @@ function FoodList() {
       url: 'https://i0.wp.com/www.angsarap.net/wp-content/uploads/2022/03/Tonkotsu-Ramen-Wide.jpg'
     }
   ]
+
+  const listOfCards = food.map((f, index) => <Card key={index} food={food} />)
   return (
     <>
       <Nav />
       <Header />
       <Filter />
       <div className="container mx-auto grid grid-cols-3 justify-items-center gap-10 bg-pink-100">
-        <div className=" bg-pink-400 w-80 h-64">
-          <Card />
-        </div>
-        <div className=" bg-pink-400 w-80 h-64">card2</div>
-        <div className=" bg-pink-400 w-80 h-64">card3</div>
-        <div className=" bg-pink-400 w-80 h-64">card4</div>
-        <div className=" bg-pink-400 w-80 h-64">card5</div>
-        <div className=" bg-pink-400 w-80 h-64">card6</div>
+        {listOfCards.map((card, index) => (
+          <div key={index}>{card}</div>
+        ))}
       </div>
     </>
   )
