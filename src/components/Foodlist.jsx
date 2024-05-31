@@ -4,7 +4,7 @@ import Filter from './Filter'
 import Card from './Card'
 
 function FoodList() {
-  let food = [
+  let foodlist = [
     {
       food_id: 1,
       food_title: 'Pizza Margherita ',
@@ -44,19 +44,86 @@ function FoodList() {
       rating: 5,
       available: true,
       url: 'https://i0.wp.com/www.angsarap.net/wp-content/uploads/2022/03/Tonkotsu-Ramen-Wide.jpg'
+    },
+    {
+      food_id: 4,
+      food_title: 'Pad Thai',
+      country: 'Thailand',
+      category: 'main dish',
+      ingredients:
+        'rice noodle, shrimps, tamarind sauce, fish sauce, palm sugar, bean sprouts, lime, peanuts',
+      description:
+        'Thai noodle stir fry with a sweet-savoury-sour sauce scattered with crushed peanuts.',
+      chef_id: 10,
+      rating: 4,
+      available: true,
+      url: 'https://www.seriouseats.com/thmb/IBikLAGkkP2QVaF3vLIk_LeNqHM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/rich-and-creamy-tonkotsu-ramen-broth-from-scratch-recipe-Diana-Chistruga-hero-6d318fadcca64cc9ac3e1c40fc7682fb.JPG'
+    },
+    {
+      food_id: 5,
+      food_title: 'Gyoza',
+      country: 'Japan',
+      category: 'appetizer',
+      ingredients: 'minced pork, soy sauce, flour, spring onion',
+      description:
+        'Gyoza are Japanese pan-fried dumplings that are crisp and golden on the bottom and juicy inside. These meat-filled treats are easy to fold using one of the methods I show here. They’re so delicious served with my savory dipping sauce.',
+      chef_id: 1,
+      rating: 3,
+      available: true,
+      url: 'https://www.seriouseats.com/thmb/GNFUxllntjgtfQiAd6lofC72JjY=/500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__20120227-tonkotsu-ramen-broth-pork-fat-24-1451c421c7d74cc08b0c2b3e26f1ec8f.jpg'
+    },
+    {
+      food_id: 6,
+      food_title: 'Gambas al Ajillo',
+      country: 'Spain',
+      category: 'appetizer',
+      ingredients: 'shrimp, garlic, saffron, olive oil',
+      description:
+        'Gambas al Ajillo or Spanish garlic shrimp is popular for good reason! Big juicy shrimp, swimming in tasty olive oil and garlic sauce. It is bright, garlicy, spicy and rich in the best way possible. Perfect with some crusty bread!',
+      chef_id: 2,
+      rating: 5,
+      available: true,
+      url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/11/f7/d1/f8.jpg'
+    },
+    {
+      food_id: 7,
+      food_title: 'Parmigiano Pasta',
+      country: 'Italy',
+      category: 'main dish',
+      ingredients: 'pasta, garlic, parmigiano, breadcrumbs, olive oil',
+      description:
+        'Home made linguine with ricotta and milk, plus a topping of bread crumbs, garlic, parsley, butter, and Parmigiano.',
+      chef_id: 5,
+      rating: 3,
+      available: true,
+      url: 'https://blog.nannybag.com/wp-content/uploads/2020/02/best-pizzas-Naples-margherita-50-kalo-copie.jpg'
+    },
+    {
+      food_id: 8,
+      food_title: 'Shrimp Tempura',
+      country: 'Japan',
+      category: 'main dish',
+      ingredients:
+        ' all-purpose flour, sprimp, panko breadcrums, eggs, soy sauce',
+      description:
+        'Tempura is a typical Japanese dish that usually consists of seafood and vegetables that have been coated in a thin batter and deep fried.',
+      chef_id: 2,
+      rating: 4,
+      available: true,
+      url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/99/8d/b7.jpg'
     }
   ]
 
-  const listOfCards = food.map((f, index) => <Card key={index} food={food} />)
+  const listOfCards = foodlist.map((food, index) => (
+    <Card key={index} food={food} />
+  ))
   return (
     <>
       <Nav />
       <Header />
       <Filter />
       <div className="container mx-auto grid grid-cols-3 justify-items-center gap-10 bg-pink-100">
-        {listOfCards.map((card, index) => (
-          <div key={index}>{card}</div>
-        ))}
+        {listOfCards}
       </div>
     </>
   )
