@@ -118,14 +118,14 @@ function FoodList() {
     <Card key={index} food={food} />
   ))
   return (
-    <>
+    <div className="container mx-auto">
       <Nav />
       <Header />
       <Filter />
-      <div className="container mx-auto grid grid-cols-3 justify-items-center gap-10 bg-pink-100">
+      <div className="grid grid-cols-3 justify-items-center gap-10 bg-pink-100">
         {listOfCards}
       </div>
-    </>
+    </div>
   )
 }
 
