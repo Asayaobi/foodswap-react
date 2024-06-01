@@ -9,12 +9,19 @@ function Filter() {
         >
           <option value="">Any Location</option>
         </select>
+        {/* country */}
+        <select
+          name="country"
+          className="border border-gray-300 rounded ps-9 w-full p-2"
+        >
+          <option value="">Cuisine Type</option>
+        </select>
         {/* category */}
         <select
           name="category"
           className="border border-gray-300 rounded ps-9 w-full p-2"
         >
-          <option value="">All category</option>
+          <option value="">Course Category</option>
         </select>
         {/* keyword */}
         <input
