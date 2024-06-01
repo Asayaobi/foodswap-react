@@ -7,7 +7,7 @@ function Card(props) {
     <>
       <Link to={`/food/${foodlist.food_id}`}>
         <div className="bg-white shadow-lg hover:bg-slate-100">
-          <div className="relative w-full pt-[100%]">
+          <div className="relative aspect-square">
             <img
               src={foodlist.url}
               alt="food pic"
