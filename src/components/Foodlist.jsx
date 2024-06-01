@@ -29,7 +29,7 @@ function FoodList() {
       chef_id: 2,
       rating: 3,
       available: true,
-      url: 'https://visit.marketing-italia.eu/uploads/visitnaples/uploads_articoli/paragrafo/2018020515GINO0027-min.jpg'
+      url: 'https://www.seriouseats.com/thmb/GNFUxllntjgtfQiAd6lofC72JjY=/500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__20120227-tonkotsu-ramen-broth-pork-fat-24-1451c421c7d74cc08b0c2b3e26f1ec8f.jpg'
     },
     {
       food_id: 3,
@@ -43,7 +43,7 @@ function FoodList() {
       chef_id: 3,
       rating: 5,
       available: true,
-      url: 'https://i0.wp.com/www.angsarap.net/wp-content/uploads/2022/03/Tonkotsu-Ramen-Wide.jpg'
+      url: 'https://hips.hearstapps.com/hmg-prod/images/paella-index-64d108cdc9a44.jpg'
     },
     {
       food_id: 4,
@@ -57,7 +57,7 @@ function FoodList() {
       chef_id: 10,
       rating: 4,
       available: true,
-      url: 'https://www.seriouseats.com/thmb/IBikLAGkkP2QVaF3vLIk_LeNqHM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/rich-and-creamy-tonkotsu-ramen-broth-from-scratch-recipe-Diana-Chistruga-hero-6d318fadcca64cc9ac3e1c40fc7682fb.JPG'
+      url: 'https://www.unileverfoodsolutions.co.th/dam/global-ufs/mcos/SEA/calcmenu/recipes/TH-recipes/pasta-dishes/%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%AA%E0%B8%94/%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%AA%E0%B8%94_header.jpg'
     },
     {
       food_id: 5,
@@ -70,7 +70,7 @@ function FoodList() {
       chef_id: 1,
       rating: 3,
       available: true,
-      url: 'https://www.seriouseats.com/thmb/GNFUxllntjgtfQiAd6lofC72JjY=/500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__20120227-tonkotsu-ramen-broth-pork-fat-24-1451c421c7d74cc08b0c2b3e26f1ec8f.jpg'
+      url: 'https://japanesetaste.com/cdn/shop/articles/how-to-make-gyoza-japanese-dumplings-at-home-japanese-taste.jpg'
     },
     {
       food_id: 6,
@@ -83,7 +83,7 @@ function FoodList() {
       chef_id: 2,
       rating: 5,
       available: true,
-      url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/11/f7/d1/f8.jpg'
+      url: 'https://images.food52.com/8ELFPLgqvPrbldfeAtQg7W3bA08=/2016x1344/filters:format(webp)/627abcfd-c1f9-4622-8baa-8a3c7388a28a--630_Sun-Dried_Tomato_Chorizo_Garlic_Shrimp_bright_half_pan_OTE.jpg'
     },
     {
       food_id: 7,
@@ -96,7 +96,7 @@ function FoodList() {
       chef_id: 5,
       rating: 3,
       available: true,
-      url: 'https://blog.nannybag.com/wp-content/uploads/2020/02/best-pizzas-Naples-margherita-50-kalo-copie.jpg'
+      url: 'https://images.food52.com/1BPfI35rInGwMm_E7fRVhfZn6vc=/2016x1344/filters:format(webp)/a5a735bb-4389-4739-b286-180be60ac251--2015-0106_pasta-with-garlic-parmesan-breadcrumbs-331.jpg'
     },
     {
       food_id: 8,
@@ -110,7 +110,34 @@ function FoodList() {
       chef_id: 2,
       rating: 4,
       available: true,
-      url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/99/8d/b7.jpg'
+      url: 'https://images.food52.com/gXAkKavMTerv--4j3Kbl5b4VVfY=/2016x1344/filters:format(webp)/4af6259a-a896-4b8c-9755-c488ca771852--2021-1019_tempura_3x2_julia-gartland_297.jpg'
+    },
+    {
+      food_id: 9,
+      food_title: 'Pad Kra Pow',
+      country: 'Thailand',
+      category: 'main dish',
+      ingredients: 'pork, oyster sauce, holy basil, fish sauce, rice, egg',
+      description:
+        'Pad kra pao is a Thai holy basil stir fry that I think deserves the title: "National dish of Thailand". It’s a favourite of Thai people and Thai food lovers around the world, and if you\'re getting into Thai food, this has to be on your to-do list.',
+      chef_id: 10,
+      rating: 3,
+      available: true,
+      url: 'https://thejournalistclub.com/wp-content/uploads/2022/06/1-%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2-.jpeg'
+    },
+    {
+      food_id: 10,
+      food_title: 'Mango Sticky Rice',
+      country: 'Thailand',
+      category: 'dessert',
+      ingredients:
+        'rice, mango, coconut milk, palm sugar, pandan, dried soy beans',
+      description:
+        'Thai Mango Sticky Rice with glutinous coconut rice and fresh, sweet ripe mangoes with a coconut sauce. A delicious Thai dessert!',
+      chef_id: 10,
+      rating: 4,
+      available: true,
+      url: 'https://www.allrecipes.com/thmb/yeUwoCu2irwqGDb-3PHJHnaX2C4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-150313-thai-sweet-sticky-rice-with-mango-khao-neeo-mamuang-ddmfs-4x3-hero-0da7a9b26cce4d07aea44f2f2b6abd95.jpg'
     }
   ]
 
@@ -122,8 +149,10 @@ function FoodList() {
       <Nav />
       <Header />
       <Filter />
-      <div className="grid grid-cols-3 justify-items-center gap-10 bg-pink-100">
-        {listOfCards}
+      <div className="grid justify-stretch py-28 px-48">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {listOfCards}
+        </div>
       </div>
     </div>
   )
