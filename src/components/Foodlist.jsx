@@ -146,7 +146,10 @@ function FoodList() {
   ))
   return (
     <div className="container mx-auto">
-      <Nav />
+      <div>
+        <Nav />
+      </div>
+
       <Header />
       <Filter />
       <div className="grid justify-stretch pb-28 pt-10 px-48">
