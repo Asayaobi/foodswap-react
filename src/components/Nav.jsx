@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
   return (
-    <>
-      <div className="absolute inset-0 grid grid-cols-2 gap-10 justify-between content-start">
+    <div>
+      <div className="absolute inset-0 grid grid-cols-2 gap-10 justify-between content-start mx-28">
         <Link to="/">
           <img
             src="https://i.postimg.cc/bYChMmRP/triangle.png"
@@ -35,7 +35,7 @@ function Nav() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
