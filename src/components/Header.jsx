@@ -9,6 +9,7 @@ function Header() {
             backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/shop_bg-compressed.jpg)`
           }}
         ></div>
+        {/* header for front page */}
         <div className=" absolute inset-0 flex items-center justify-center">
           <img
             src="https://i.postimg.cc/tCCKNF0c/circle.png"
