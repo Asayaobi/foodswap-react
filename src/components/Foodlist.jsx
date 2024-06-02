@@ -2,6 +2,7 @@ import Nav from './Nav'
 import Header from './Header'
 import Filter from './Filter'
 import Card from './Card'
+import Footer from './Footer'
 
 function FoodList() {
   let foodlist = [
@@ -157,6 +158,7 @@ function FoodList() {
           {listOfCards}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

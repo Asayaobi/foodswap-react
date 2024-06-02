@@ -1,5 +1,6 @@
 import Nav from './Nav'
 import Reviews from './Reviews'
+import Footer from './Footer'
 
 function Food() {
   const food = {
@@ -102,6 +103,7 @@ function Food() {
         </div>
       </div>
       <Reviews />
+      <Footer />
     </div>
   )
 }
