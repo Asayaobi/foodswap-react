@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Header() {
   return (
     <>
@@ -63,7 +65,7 @@ function Header() {
             />
           </div>
         </div>
-        {/* Log In Column         */}
+        {/* Log In Column - show only when it's not Logged in */}
         <div className="w-2/3">
           <div className=" pt-36">
             <div className="grid grid-rows">
@@ -73,14 +75,18 @@ function Header() {
               />
               <div className="flex justify-center">
                 <div className=" py-20">
-                  <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500 ">
-                    CLICK HERE TO LOG IN
-                  </button>
+                  <Link to="/login">
+                    <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500 ">
+                      CLICK HERE TO LOG IN
+                    </button>
+                  </Link>
                   <div className="text-center italic text-xl py-5">or</div>
                   <div className=" flex justify-center">
-                    <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500">
-                      REGISTER FOR FREE
-                    </button>
+                    <Link to="/signup">
+                      <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500">
+                        REGISTER FOR FREE
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
