@@ -32,7 +32,7 @@ function Listings() {
   ]
 
   const listOfCards = listings.map((food, index) => (
-    <Card key={index} food={food} />
+    <Card key={index} food={food} isListing={true} />
   ))
 
   return (
