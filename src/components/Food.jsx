@@ -94,8 +94,8 @@ function Food() {
               <hr />
             </div>
             <div className=" text-center">
-              <button className=" bg-yellow-500 text-white w-full hover:bg-yellow-700">
-                S W A P
+              <button className=" bg-yellow-500 text-white w-full hover:bg-yellow-700 tracking-widest">
+                REQUEST TO SWAP
               </button>
             </div>
           </div>
