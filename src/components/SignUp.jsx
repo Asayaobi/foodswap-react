@@ -11,14 +11,16 @@ function SignUp() {
         />
       </div>
       <div className="flex justify-center items-center bg-slate-200 w-1/2">
-        <div className=" bg-white px-48 py-40 pt-14">
-          <Link to="/">
-            <img
-              src="https://i.postimg.cc/L6W3VbhW/foodswapblacklogotriangle-002.png"
-              alt="foodswap logo"
-              className="pl-5 h-40"
-            />
-          </Link>
+        <div className=" bg-white px-10 py-10 pt-8">
+          <div className="flex justify-center">
+            <Link to="/">
+              <img
+                src="https://i.postimg.cc/L6W3VbhW/foodswapblacklogotriangle-002.png"
+                alt="foodswap logo"
+                className="pl-5 h-40"
+              />
+            </Link>
+          </div>
           {/* Log In Form */}
           <div className="py-3">Name</div>
           <div className=" grid grid-cols-3 gap-3">
