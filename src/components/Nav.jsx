@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 function Nav() {
   return (
     <div>
-      <div className="absolute inset-0 grid grid-cols-2 gap-10 justify-between content-start mx-28">
+      <div className="absolute inset-0 grid grid-cols-2 gap-10 justify-between content-start mr-28 ml-14">
         <Link to="/">
           <img
-            src="https://i.postimg.cc/bYChMmRP/triangle.png"
+            src="https://i.postimg.cc/MphWSVpT/whitetrianglelogo-001.png"
             alt="foodswap logo"
             className="pl-5 h-40"
           />
