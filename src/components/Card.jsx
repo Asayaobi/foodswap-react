@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Card(props) {
   const foodlist = props.food
+  const isListing = props.isListing
   console.log('props', foodlist)
   return (
     <>
@@ -18,12 +19,24 @@ function Card(props) {
             <div className="text-lg font-semibold">{foodlist.food_title}</div>
             <div className="text-gray-500">{foodlist.country}</div>
             <hr />
-            {foodlist.available ? (
+            {/* button */}
+            {isListing ? (
+              <div className="flex justify-between px-2 gap-1 mt-3 ml-1">
+                <Link to={`/food/${foodlist.food_id}`}>
+                  <button className=" bg-slate-700 px-10 text-white hover:bg-slate-500">
+                    View
+                  </button>
+                </Link>
+                <Link to={`/food/${foodlist.food_id}/edit`}>
+                  <button className=" bg-slate-700 px-10 text-white hover:bg-slate-500">
+                    Edit
+                  </button>
+                </Link>
+              </div>
+            ) : (
               <button className=" bg-orange-500 hover:bg-yellow-500 w-full text-white mt-2">
                 ready to swap
               </button>
-            ) : (
-              <div className=" text-gray-500">not available</div>
             )}
           </div>
         </div>
