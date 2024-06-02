@@ -76,7 +76,7 @@ function Header() {
               <div className="flex justify-center">
                 <div className=" py-20">
                   <Link to="/login">
-                    <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500 ">
+                    <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 rounded-sm hover:bg-orange-700">
                       CLICK HERE TO LOG IN
                     </button>
                   </Link>
@@ -85,7 +85,7 @@ function Header() {
                   </div>
                   <div className=" flex justify-center">
                     <Link to="/signup">
-                      <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500">
+                      <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 rounded-sm hover:bg-orange-700">
                         REGISTER FOR FREE
                       </button>
                     </Link>
