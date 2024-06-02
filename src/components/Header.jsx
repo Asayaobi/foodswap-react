@@ -19,18 +19,73 @@ function Header() {
           />
         </div>
       </div>
-      <div className="flex bg-slate-100 py-10 justify-center h-192">
-        <img
-          src="https://i.ibb.co/HCw1dTJ/message-001.jpg"
-          alt="message from founder"
-          className=" w-1/2"
-        />
-        <div className="flex items-center">
-          <img
-            src="https://img.theepochtimes.com/assets/uploads/2022/06/27/sharing-food.jpg"
-            alt="sharing food"
-            className="h-96"
-          />
+      <div className="flex bg-slate-100 justify-center px-32">
+        {/* Welcome Message */}
+        <div className=" bg-white p-20 w-2/3 text-center space-y-8">
+          <div className=" space-y-2">
+            <div className=" text-7xl font-serif text-orange-400">Welcome!</div>
+            <div className=" text-3xl font-serif inline">to </div>
+            <div className="pl-2 font-extrabold text-4xl font-serif inline">
+              food / swap
+            </div>
+            <div className="  text-orange-400 font-serif italic">
+              “Where Home-Cooked Goodness meets Sustainably Shared”
+            </div>
+          </div>
+          <div className=" space-y-8">
+            <div className=" italic">
+              Welcome to our vibrant community of culinary enthusiasts at Food
+              swap. Our website is a delightful hub where home cooks gather to
+              share the love and flavors of their favorite dishes. Whether
+              you're passionate about perfecting your grandmother's lasagna
+              recipe or experimenting with new flavors in your kitchen
+              laboratory, there's a place for you here.
+            </div>
+            <div className=" italic">
+              At Food swap, we celebrate the art of home cooking and the joy of
+              sharing meals with others. Join us to swap your signature dishes
+              with fellow food lovers, discovering new tastes and forging
+              meaningful connections along the way. From comforting classics to
+              bold culinary creations, every dish tells a story, and we're here
+              to help you share yours
+            </div>
+            <div className=" italic">
+              Come, explore, and indulge in the delicious diversity of homemade
+              meals. Together, let's create a symphony of flavors, one swap at a
+              time!
+            </div>
+          </div>
+          <div className=" flex justify-center mb-0">
+            <img
+              src="https://i.postimg.cc/3xrKrt3t/signaturemasterchef-003.jpg"
+              alt="master chef signature"
+              className=" h-36"
+            />
+          </div>
+        </div>
+        {/* Log In Column         */}
+        <div className="w-2/3">
+          <div className=" pt-36">
+            <div className="grid grid-rows">
+              <img
+                src="https://img.theepochtimes.com/assets/uploads/2022/06/27/sharing-food.jpg"
+                alt="sharing food"
+              />
+              <div className="flex justify-center">
+                <div className=" py-20">
+                  <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500 ">
+                    CLICK HERE TO LOG IN
+                  </button>
+                  <div className="text-center italic text-xl py-5">or</div>
+                  <div className=" flex justify-center">
+                    <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 hover:bg-slate-500">
+                      REGISTER FOR FREE
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
