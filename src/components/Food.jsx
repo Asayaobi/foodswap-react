@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import Reviews from './Reviews'
 import Footer from './Footer'
+import Swap from './Swap'
 
 function Food() {
   const food = {
@@ -94,11 +95,7 @@ function Food() {
               <div className="pb-3">{food.category}</div>
               <hr />
             </div>
-            <div className=" text-center">
-              <button className=" bg-yellow-500 text-white w-full hover:bg-yellow-700 tracking-widest">
-                REQUEST TO SWAP
-              </button>
-            </div>
+            <Swap />
           </div>
         </div>
       </div>
