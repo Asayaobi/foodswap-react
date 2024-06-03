@@ -80,6 +80,12 @@ function SignUp() {
               Register
             </button>
           </form>
+          <div className="flex mt-7 justify-center text-sm gap-3">
+            <div className="">Already have an account ?</div>
+            <Link to="/LogIn">
+              <div className="text-orange-600">Log In here</div>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
