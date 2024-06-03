@@ -14,6 +14,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<FoodList />} />
+        <Route path="/request" element={<Bookings />} />
         <Route path="/bookings" element={<Bookings />} />
         <Route path="/food/:id" element={<Food />} />
         <Route path="/food/:id/edit" element={<FoodEdit />} />
