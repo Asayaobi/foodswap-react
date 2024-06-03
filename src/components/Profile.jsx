@@ -19,7 +19,7 @@ function Profile() {
                 </div>
                 <div className=" col-span-2">
                   <div className="mb-4">
-                    <label className="block">First Name</label>
+                    <label>First Name</label>
                     <input
                       type="text"
                       name="firstname"
@@ -27,7 +27,7 @@ function Profile() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block">Last Name</label>
+                    <label>Last Name</label>
                     <input
                       type="text"
                       name="lastname"
@@ -35,7 +35,7 @@ function Profile() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block">Profile Picture</label>
+                    <label>Profile Picture</label>
                     <input
                       type="text"
                       name="profile_image"
@@ -43,7 +43,7 @@ function Profile() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block">City</label>
+                    <label>City</label>
                     <input
                       type="text"
                       name="city"
@@ -52,7 +52,7 @@ function Profile() {
                   </div>
 
                   <div className="flex justify-end">
-                    <button className="bg-orange-500 hover:bg-orange-300 text-white mt-2 py-3 px-4 tracking-widest">
+                    <button className="bg-orange-500 hover:bg-orange-300 text-white mt-2 py-3 px-4 tracking-widest rounded-sm">
                       UPDATE PROFILE
                     </button>
                   </div>
