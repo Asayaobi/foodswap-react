@@ -48,18 +48,31 @@ function Reviews() {
         </div>
         <hr />
         {/* form */}
-        <div className=" my-10 space-y-4">
-          <div className="text-2xl font-serif font-bold">Leave a comment</div>
-          <div>Taste Rating</div>
-          <div>Comment</div>
-          <textarea
-            name="review_text"
-            className=" w-full text-sm pb-16 pr-16 bg-slate-100"
-          ></textarea>
-          <button className=" bg-slate-800 text-white py-1 px-4 tracking-widest">
-            POST COMMENT
-          </button>
-        </div>
+        <form>
+          <div className=" my-10 space-y-4">
+            <div className="text-2xl font-serif font-bold">Leave a comment</div>
+            <div className=" gap-3 space-x-2">
+              <label>Taste Rating</label>
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+              <input type="radio" name="rating" />
+            </div>
+            <div className=" gap-3">
+              <label>Comment</label>
+            </div>
+            <textarea
+              rows="5"
+              name="review_text"
+              className=" w-full text-sm  bg-slate-100"
+            ></textarea>
+
+            <button className=" bg-slate-800 text-white py-1 px-4 tracking-widest rounded-sm">
+              POST COMMENT
+            </button>
+          </div>
+        </form>
         {/* review list */}
         {reviewList}
       </div>
@@ -83,7 +96,7 @@ function Review({ review }) {
             <div>{review.author.firstname}</div>
             <div>{review.author.lastname}</div>
           </div>
-          <div className=" text-slate-300 text-sm">{review.review_date}</div>
+          <div className=" text-slate-400 text-sm">{review.review_date}</div>
           <div className=" space-y-4">
             <div>{review.rating}</div>
             <div className=" pb-8">{review.review_text}</div>
