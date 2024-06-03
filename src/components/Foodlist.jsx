@@ -155,6 +155,13 @@ function FoodList() {
           {listOfCards}
         </div>
       </div>
+      <div>
+        <img
+          src="https://i.postimg.cc/05LxCwqq/deliveryapp.jpg"
+          alt="delivery logo"
+          className=" h-194 w-full"
+        />
+      </div>
       <Footer />
     </div>
   )
