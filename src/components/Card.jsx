@@ -4,6 +4,7 @@ function Card(props) {
   const foodlist = props.food
   const isListing = props.isListing
   const isBooking = props.isBooking
+  const isRequested = props.isRequested
   console.log('props', foodlist)
   console.log('props booking', isBooking)
   console.log('listing', isListing)
@@ -23,7 +24,7 @@ function Card(props) {
             <div className="text-gray-500">{foodlist.country}</div>
             <hr />
             {/* button */}
-            {!isListing && !isBooking ? (
+            {!isListing && !isBooking && !isRequested ? (
               <button className=" bg-orange-500 hover:bg-yellow-500 w-full text-white mt-2">
                 ready to swap
               </button>
@@ -45,18 +46,34 @@ function Card(props) {
             ) : null}
             {/* From Booking */}
             {isBooking ? (
-              foodlist.swap ? (
-                <Link to={`/food/${foodlist.food_id}`}>
-                  <div className=" bg-slate-700 px-10 text-white hover:bg-slate-500">
-                    Swapped
-                  </div>
-                </Link>
+              foodlist.swap === 'swap' ? (
+                <div className=" bg-green-800 px-10 text-white hover:bg-green-900 tracking-widest">
+                  SWAPPED
+                </div>
+              ) : foodlist.swap === 'pending' ? (
+                <button className=" bg-orange-500 hover:bg-yellow-500 w-full text-white mt-2">
+                  PENDING
+                </button>
               ) : (
-                <Link to={`/food/${foodlist.food_id}`}>
-                  <div className=" bg-slate-700 px-10 text-white hover:bg-slate-500">
-                    Pending
-                  </div>
-                </Link>
+                <button className=" bg-slate-700 hover:bg-slate-500 w-full text-white mt-2">
+                  CANCELLED
+                </button>
+              )
+            ) : null}
+            {/* From Request */}
+            {isRequested ? (
+              foodlist.swap === 'swap' ? (
+                <button className=" bg-green-800 hover:bg-green-900 w-full text-white mt-2 tracking-widest">
+                  SWAPPED
+                </button>
+              ) : foodlist.swap === 'pending' ? (
+                <button className=" bg-orange-500 hover:bg-yellow-500 w-full text-white mt-2">
+                  PENDING
+                </button>
+              ) : (
+                <button className=" bg-slate-700 hover:bg-slate-500 w-full text-white mt-2">
+                  CANCELLED
+                </button>
               )
             ) : null}
           </div>
