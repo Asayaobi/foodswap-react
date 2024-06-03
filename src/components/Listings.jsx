@@ -9,7 +9,7 @@ function Listings() {
       country: 'Thailand',
       category: 'main dish',
       ingredients: 'pork, oyster sauce, holy basil, fish sauce, rice, egg',
-      description: `Pad kra pao is a Thai holy basil stir fry that I think deserves the title: "National dish of Thailand". It’s a favourite of Thai people and Thai food lovers around the world, and if you\'re getting into Thai food, this has to be on your to-do list.`,
+      description: `Pad kra pao is a Thai holy basil stir fry that I think deserves the title: "National dish of Thailand". It’s a favourite of Thai people and Thai food lovers around the world, and if you're getting into Thai food, this has to be on your to-do list.`,
       chef_id: 10,
       rating: 3,
       available: true,
@@ -39,14 +39,15 @@ function Listings() {
     <>
       <div className="relative h-screen">
         <div className="absolute inset-0 bg-[url('https://preview.codeless.co/picante/default/wp-content/uploads/2018/07/home02_03-compressed.jpg')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg">
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <Nav />
+          <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg max-w-4xl w-full">
             <h1 className="text-2xl font-bold mb-8 font-serif">My Dish</h1>
             <form>
               <div className="grid grid-cols-3 gap-8">
                 <div>
                   <div className="mb-4">
-                    <label className="block">Dish Name</label>
+                    <label className="block mb-2">Dish Name</label>
                     <input
                       type="text"
                       name="food_title"
@@ -54,7 +55,7 @@ function Listings() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block">Culinary Origin</label>
+                    <label className="block mb-2">Culinary Origin</label>
                     <input
                       type="text"
                       name="country"
@@ -62,7 +63,7 @@ function Listings() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block">Course Category</label>
+                    <label className="block mb-2">Course Category</label>
                     <input
                       type="text"
                       name="category"
@@ -70,7 +71,7 @@ function Listings() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block">Ingredients</label>
+                    <label className="block mb-2">Ingredients</label>
                     <input
                       type="text"
                       name="ingredients"
@@ -78,7 +79,7 @@ function Listings() {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block">Availability</label>
+                    <label className="block mb-2">Availability</label>
                     <select
                       name="availability"
                       className="border rounded w-full py-2 px-3"
@@ -89,13 +90,13 @@ function Listings() {
                   </div>
                 </div>
                 <div className="col-span-2">
-                  <label className="block">Description</label>
+                  <label className="block mb-2">Description</label>
                   <input
                     type="text"
                     name="description"
-                    className="border rounded py-2 px-3 w-full pb-16 pr-16"
+                    className="border rounded py-2 px-3 w-full mb-4 pb-16 pr-16"
                   />
-                  <label className="block mt-2">Images</label>
+                  <label className="block mb-2 mt-2">Images</label>
                   <input
                     type="text"
                     className="border rounded py-2 px-3 w-full mb-2"
@@ -122,10 +123,9 @@ function Listings() {
             </form>
           </div>
         </div>
-        <Nav />
       </div>
       {/* Cards Session */}
-      <div className=" text-center bg-slate-100 py-4">
+      <div className="text-center bg-slate-100 py-4">
         <div className="grid justify-stretch pb-28 pt-10 px-48">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {listOfCards}
