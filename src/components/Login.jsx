@@ -20,23 +20,35 @@ function LogIn() {
             />
           </Link>
           {/* Log In Form */}
-          <div className="py-3">Email</div>
-          <input
-            type="email"
-            name="email"
-            className="border w-full p-1 rounded"
-            autoFocus
-          />
-          <div className="py-3">Password</div>
-          <input
-            type="password"
-            name="password"
-            className="border w-full p-1 rounded mb-8"
-            autoFocus
-          />
-          <button className=" bg-orange-500 hover:bg-orange-300 w-full text-white mt-2 py-3">
-            Log In
-          </button>
+          <form>
+            <div className="py-3">
+              <label>Email</label>
+            </div>
+            <input
+              type="email"
+              name="email"
+              className="border w-full p-1 rounded"
+              autoFocus
+            />
+            <div className="py-3">
+              <label>Password</label>
+            </div>
+            <input
+              type="password"
+              name="password"
+              className="border w-full p-1 rounded mb-8"
+              autoFocus
+            />
+            <button className=" bg-orange-500 hover:bg-orange-300 w-full text-white mt-2 py-3">
+              Log In
+            </button>
+          </form>
+          <div className="flex mt-7 justify-center text-sm gap-3">
+            <div className="">New to Food Swap ?</div>
+            <Link to="/SignUp">
+              <div className="text-orange-600">Create an account here</div>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
