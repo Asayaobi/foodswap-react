@@ -21,7 +21,7 @@ function Header() {
           />
         </div>
       </div>
-      <div className="flex bg-slate-100 justify-center px-32">
+      <div className="flex justify-center px-32">
         {/* Welcome Message */}
         <div className=" bg-white p-20 w-2/3 text-center space-y-8">
           <div className=" space-y-2">
@@ -66,7 +66,7 @@ function Header() {
           </div>
         </div>
         {/* Log In Column - show only when it's not Logged in */}
-        <div className="w-2/3 bg-slate-800">
+        <div className="w-2/3 ">
           <div className=" pt-36">
             <div className="grid grid-rows">
               <img
@@ -80,9 +80,7 @@ function Header() {
                       CLICK HERE TO LOG IN
                     </button>
                   </Link>
-                  <div className="text-center text-white italic text-xl py-5">
-                    or
-                  </div>
+                  <div className="text-center  italic text-xl py-5">or</div>
                   <div className=" flex justify-center">
                     <Link to="/signup">
                       <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 rounded-sm hover:bg-orange-700">

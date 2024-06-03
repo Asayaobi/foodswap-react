@@ -150,7 +150,7 @@ function FoodList() {
       <Header />
       <Nav />
       <Filter />
-      <div className="grid justify-stretch pb-28 pt-10 px-48">
+      <div className="bg-slate-50 grid justify-stretch pb-28 pt-10 px-48">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {listOfCards}
         </div>

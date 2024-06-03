@@ -1,7 +1,7 @@
 function Filter() {
   return (
     <>
-      <div className="flex justify-center mt-10 gap-4 mx-48">
+      <div className="bg-slate-50 flex justify-center gap-4 px-48">
         {/* location */}
         <select
           name="location"
