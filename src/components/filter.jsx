@@ -1,8 +1,8 @@
 function Filter() {
   return (
     <>
-      <div className="bg-slate-50 flex justify-center gap-4 px-48">
-        <form>
+      <form>
+        <div className="bg-slate-50 flex justify-center gap-4 px-48">
           {/* location */}
           <select
             name="location"
@@ -35,8 +35,8 @@ function Filter() {
           <button className="flex relative bg-slate-100 items-center p-5 border h-11 sm:w-full lg:w-40">
             Search
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </>
   )
 }
