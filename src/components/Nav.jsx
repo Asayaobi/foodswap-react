@@ -23,6 +23,11 @@ function Nav() {
               My Kitchen
             </button>
           </Link>
+          <Link to="/bookings">
+            <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:border border-white">
+              Swap Request
+            </button>
+          </Link>
           <Link to="/profile">
             <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:border border-white">
               My Profile
