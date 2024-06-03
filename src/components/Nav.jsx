@@ -12,7 +12,7 @@ function Nav() {
           />
         </Link>
 
-        <div className="gap-10 flex justify-end">
+        <div className="gap-4 flex justify-end">
           <Link to="/">
             <button className="px-8 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
               Home
