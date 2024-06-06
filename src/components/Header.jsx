@@ -73,22 +73,17 @@ function Header() {
                 src="https://img.theepochtimes.com/assets/uploads/2022/06/27/sharing-food.jpg"
                 alt="sharing food"
               />
-              <div className="flex justify-center">
-                <div className=" py-20">
-                  <Link to="/login">
-                    <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 rounded-sm hover:bg-orange-700">
-                      CLICK HERE TO LOG IN
-                    </button>
-                  </Link>
-                  <div className="text-center  italic text-xl py-5">or</div>
-                  <div className=" flex justify-center">
-                    <Link to="/signup">
-                      <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest outline outline-offset-2 outline-4 rounded-sm hover:bg-orange-700">
-                        REGISTER FOR FREE
-                      </button>
-                    </Link>
-                  </div>
-                </div>
+              <div className="flex">
+                <Link to="/login">
+                  <button className=" bg-yellow-500 text-white text-3xl py-2 px-6 tracking-widest  hover:bg-orange-700 rounded-bl-md">
+                    CLICK HERE TO LOG IN
+                  </button>
+                </Link>
+                <Link to="/signup">
+                  <button className=" bg-orange-400 text-white text-3xl py-2 px-6 tracking-widest  hover:bg-orange-700 rounded-br-md">
+                    SIGN UP FOR FREE
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
