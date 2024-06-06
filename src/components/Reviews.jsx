@@ -51,7 +51,7 @@ function Reviews() {
         </div>
         {/* calculate the average rating */}
         <div className="text-2xl font-serif font-bold">
-          RATING{' '}
+          RATING
           {Math.ceil(
             reviews.reduce((sum, review) => sum + review.rating, 0) /
               reviews.length
