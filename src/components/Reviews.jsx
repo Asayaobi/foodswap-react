@@ -131,7 +131,6 @@ function Review({ review }) {
                 className="text-slate-500"
               />
             ))}
-            {/* <div>{review.rating}</div> */}
             <div className=" pb-8">{review.review_text}</div>
           </div>
         </div>
