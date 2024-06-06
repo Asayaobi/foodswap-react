@@ -41,15 +41,15 @@ function Card(props) {
           {/* From Booking */}
           {isBooking ? (
             foodlist.swap === 'swap' ? (
-              <div className=" bg-green-800 px-10 text-white hover:bg-green-900 tracking-widest pb-4 rounded-b-md">
+              <div className=" bg-green-800 px-10 text-white tracking-widest pb-4 rounded-b-md">
                 SWAPPED
               </div>
             ) : foodlist.swap === 'pending' ? (
-              <button className=" bg-orange-500 hover:bg-yellow-500 w-full text-white mt-2 pb-4 rounded-b-md">
+              <button className=" bg-orange-500 w-full text-white mt-2 pb-4 rounded-b-md">
                 PENDING
               </button>
             ) : (
-              <button className=" bg-slate-700 hover:bg-slate-500 w-full text-white mt-2 pb-4 rounded-b-md">
+              <button className=" bg-slate-700 w-full text-white mt-2 pb-4 rounded-b-md">
                 CANCELLED
               </button>
             )
