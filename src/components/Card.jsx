@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-regular-svg-icons'
 
 function Card(props) {
   const foodlist = props.food
@@ -22,11 +24,24 @@ function Card(props) {
         </div>
         <div className="pt-4 text-center">
           <div className="text-lg font-semibold">{foodlist.food_title}</div>
-          <div className="text-gray-500">{foodlist.country}</div>
           <hr />
+
+          <div className="flex justify-center gap-5">
+            <div className="text-slate-500">{foodlist.country}</div>
+            <div>
+              {[1, 2, 3, 4, 5].map((star) => (
+                <FontAwesomeIcon
+                  key={star}
+                  icon={star <= foodlist.rating ? faStar : ''}
+                  className=" text-slate-400"
+                  size="sm"
+                />
+              ))}
+            </div>
+          </div>
           {/* button */}
           {!isListing && !isBooking && !isRequested ? (
-            <button className=" bg-orange-500 hover:bg-yellow-500 w-full text-white mt-2 pb-4 rounded-b-md">
+            <button className=" bg-orange-400 hover:bg-yellow-500 w-full text-white mt-2 pb-4 rounded-b-md">
               READY TO SWAP
             </button>
           ) : null}
@@ -45,11 +60,11 @@ function Card(props) {
                 SWAPPED
               </div>
             ) : foodlist.swap === 'pending' ? (
-              <button className=" bg-orange-500 w-full text-white mt-2 pb-4 rounded-b-md">
+              <button className=" bg-slate-400 w-full text-white mt-2 pb-4 rounded-b-md">
                 PENDING
               </button>
             ) : (
-              <button className=" bg-slate-700 w-full text-white mt-2 pb-4 rounded-b-md">
+              <button className="  w-full  mt-2 pb-4 rounded-b-md">
                 CANCELLED
               </button>
             )
