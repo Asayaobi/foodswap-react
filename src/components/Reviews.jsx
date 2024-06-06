@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-regular-svg-icons'
+import { useState } from 'react'
+
 function Reviews() {
   const reviews = [
     {
@@ -27,6 +31,13 @@ function Reviews() {
       }
     }
   ]
+
+  //handle star rating
+  const [selectedRating, setSelectedRating] = useState(0)
+
+  const handleRatingChange = (rating) => {
+    setSelectedRating(rating)
+  }
   //passing reviews list to review()
   const reviewList = reviews.map((review) => (
     <Review key={review.review_id} review={review} />
@@ -53,11 +64,26 @@ function Reviews() {
             <div className="text-2xl font-serif font-bold">Leave a comment</div>
             <div className=" gap-3 space-x-2">
               <label>Taste Rating</label>
-              <input type="radio" name="rating" />
-              <input type="radio" name="rating" />
-              <input type="radio" name="rating" />
-              <input type="radio" name="rating" />
-              <input type="radio" name="rating" />
+              {[1, 2, 3, 4, 5].map((star) => (
+                <label key={star} className="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="rating"
+                    value={star}
+                    className="hidden"
+                    onChange={() => handleRatingChange(star)}
+                  />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    size="sm"
+                    className={
+                      star <= selectedRating
+                        ? 'text-yellow-500'
+                        : 'text-gray-300'
+                    }
+                  />
+                </label>
+              ))}
             </div>
             <div className=" gap-3">
               <label>Comment</label>
@@ -98,7 +124,14 @@ function Review({ review }) {
           </div>
           <div className=" text-slate-400 text-sm">{review.review_date}</div>
           <div className=" space-y-4">
-            <div>{review.rating}</div>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <FontAwesomeIcon
+                key={star}
+                icon={star <= review.rating ? faStar : null}
+                className="text-slate-500"
+              />
+            ))}
+            {/* <div>{review.rating}</div> */}
             <div className=" pb-8">{review.review_text}</div>
           </div>
         </div>
