@@ -1,6 +1,15 @@
 import Nav from './Nav'
 import Footer from './Footer'
 function Profile() {
+  const user = {
+    user_id: 11,
+    firstname: 'Lily',
+    lastname: 'Johnsons',
+    email: 'lily@123456.com',
+    password: '$2b$10$GmZ4.eVEbMd3gBQS74pdPOv1iKnHdIgVkw61ihC5NAUgwmfSGmOc.',
+    profile_image: 'jack.jpg',
+    city: 'NYC'
+  }
   return (
     <>
       <div className="relative h-screen">
@@ -24,6 +33,7 @@ function Profile() {
                       type="text"
                       name="firstname"
                       className="border rounded w-full py-2 px-3"
+                      placeholder={user.firstname}
                     />
                   </div>
                   <div className="mb-4">
@@ -32,6 +42,7 @@ function Profile() {
                       type="text"
                       name="lastname"
                       className="border rounded w-full py-2 px-3"
+                      placeholder={user.lastname}
                     />
                   </div>
                   <div className="mb-4">
@@ -40,6 +51,7 @@ function Profile() {
                       type="text"
                       name="profile_image"
                       className="border rounded w-full py-2 px-3"
+                      placeholder={user.profile_image}
                     />
                   </div>
                   <div className="mb-4">
@@ -48,6 +60,7 @@ function Profile() {
                       type="text"
                       name="city"
                       className="border rounded w-full py-2 px-3"
+                      placeholder={user.city}
                     />
                   </div>
 
