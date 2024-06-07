@@ -124,13 +124,15 @@ function Review({ review }) {
           </div>
           <div className=" text-slate-400 text-sm">{review.review_date}</div>
           <div className=" space-y-4">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <FontAwesomeIcon
-                key={star}
-                icon={star <= review.rating ? faStar : null}
-                className="text-slate-500"
-              />
-            ))}
+            {[1, 2, 3, 4, 5].map((star) =>
+              star <= review.rating ? (
+                <FontAwesomeIcon
+                  key={star}
+                  icon={faStar}
+                  className="text-slate-500"
+                />
+              ) : null
+            )}
             <div className=" pb-8">{review.review_text}</div>
           </div>
         </div>
