@@ -41,9 +41,9 @@ function Food() {
       ></div>
       <Nav />
       <div className="flex justify-center">
-        <div className="grid grid-rows-2 lg:grid-cols-2 my-10 mx-10 w-2/3 justify-start space-x-5">
+        <div className="flex justify-start space-x-5 mx-32 my-28">
           {/* Gallery */}
-          <div className=" grid grid-rows-4 gap-2 bg-pink-300">
+          <div className=" grid grid-rows-4 gap-2 w-2/3">
             <div className="grid row-span-3 aspect-square">
               <img
                 src={selectedImage}
@@ -51,20 +51,23 @@ function Food() {
                 className=" w-full h-full object-cover"
               />
             </div>
-            <div className=" grid grid-cols-3 gap-5 mt-3">
+            <div className=" grid grid-cols-3 gap-2 mt-3">
               {food.images.slice(1).map((image, index) => (
                 <div key={index}>
                   <img
                     src={image}
                     alt="food pic"
-                    className=" w-full h-full object-cover"
+                    className=" w-full h-full object-cover cursor-pointer"
+                    onClick={(event) => {
+                      setSelectedImage(image)
+                    }}
                   />
                 </div>
               ))}
             </div>
           </div>
           {/* Text */}
-          <div className="grid grid-rows-5 items-center bg-purple-200">
+          <div className="grid grid-rows-5 items-center w-2/3">
             <div className="grid row-span-2 gap-4">
               <div className=" text-4xl font-serif font-extrabold">
                 {food.food_title}
