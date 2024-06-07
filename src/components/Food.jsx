@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Nav from './Nav'
 import Reviews from './Reviews'
 import Footer from './Footer'
@@ -28,6 +29,8 @@ function Food() {
       'https://www.seriouseats.com/thmb/GNFUxllntjgtfQiAd6lofC72JjY=/500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__20120227-tonkotsu-ramen-broth-pork-fat-24-1451c421c7d74cc08b0c2b3e26f1ec8f.jpg'
     ]
   }
+
+  const [selectedImage, setSelectedImage] = useState(food.images[0])
   return (
     <div className="container mx-auto">
       <div
@@ -38,42 +41,30 @@ function Food() {
       ></div>
       <Nav />
       <div className="flex justify-center">
-        <div className="grid grid-cols-2 my-10 mx-36 w-2/3 justify-start">
+        <div className="grid grid-rows-2 lg:grid-cols-2 my-10 mx-10 w-2/3 justify-start space-x-5">
           {/* Gallery */}
-          <div className=" grid grid-rows-4 gap-2">
+          <div className=" grid grid-rows-4 gap-2 bg-pink-300">
             <div className="grid row-span-3 aspect-square">
               <img
-                src={food.images[0]}
+                src={selectedImage}
                 alt="food pic"
                 className=" w-full h-full object-cover"
               />
             </div>
             <div className=" grid grid-cols-3 gap-5 mt-3">
-              <div>
-                <img
-                  src={food.images[1]}
-                  alt="food pic"
-                  className=" w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <img
-                  src={food.images[2]}
-                  alt="food pic"
-                  className=" w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <img
-                  src={food.images[3]}
-                  alt="food pic"
-                  className=" w-full h-full object-cover"
-                />
-              </div>
+              {food.images.slice(1).map((image, index) => (
+                <div key={index}>
+                  <img
+                    src={image}
+                    alt="food pic"
+                    className=" w-full h-full object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </div>
           {/* Text */}
-          <div className="grid grid-rows-5 items-center pl-4">
+          <div className="grid grid-rows-5 items-center bg-purple-200">
             <div className="grid row-span-2 gap-4">
               <div className=" text-4xl font-serif font-extrabold">
                 {food.food_title}
