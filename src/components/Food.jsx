@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-regular-svg-icons'
 import Nav from './Nav'
 import Reviews from './Reviews'
 import Footer from './Footer'
@@ -72,13 +74,23 @@ function Food() {
               <div className=" text-4xl font-serif font-extrabold">
                 {food.food_title}
               </div>
-              <div className=" text-2xl font-serif font-extrabold text-slate-400">
+              <div className=" text-2xl font-serif font-extrabold text-slate-500">
                 {food.country}
               </div>
               <div className=" pb-3">{food.description}</div>
               <hr />
             </div>
             <div className="grid row-span-2 gap-4">
+              <div className=" text-2xl font-serif font-extrabold">RATING</div>
+              <div>
+                {[...Array(food.rating)].map((star, index) => (
+                  <FontAwesomeIcon
+                    key={star}
+                    icon={faStar}
+                    className=" text-slate-500"
+                  />
+                ))}
+              </div>
               <div className=" text-2xl font-serif font-extrabold">
                 INGREDIENTS
               </div>
