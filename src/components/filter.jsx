@@ -2,20 +2,28 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 function Filter() {
   const [cities, setCities] = useState([])
-  const [country, setCountry] = useState([])
+  const [countries, setCountries] = useState([])
+  const [categories, setCategories] = useState([])
   const getCities = async () => {
     let { data } = await axios.get(`http://localhost:4000/city`)
     setCities(data)
   }
-  const getCountry = async () => {
+  const getCountries = async () => {
     let { data } = await axios.get(`http://localhost:4000/country`)
-    setCountry(data)
+    setCountries(data)
+  }
+  const getCategories = async () => {
+    let { data } = await axios.get(`http://localhost:4000/category`)
+    setCategories(data)
   }
   useEffect(() => {
-    getCountry()
+    getCountries()
   }, [])
   useEffect(() => {
     getCities()
+  }, [])
+  useEffect(() => {
+    getCategories()
   }, [])
   return (
     <>
@@ -40,10 +48,10 @@ function Filter() {
             className="border border-gray-300 rounded ps-9 w-full p-2"
           >
             <option value="">Cuisine Type</option>
-            {country &&
-              country.map((c, index) => (
-                <option key={index} value={c}>
-                  {c}
+            {countries &&
+              countries.map((country, index) => (
+                <option key={index} value={country}>
+                  {country}
                 </option>
               ))}
           </select>
@@ -53,6 +61,12 @@ function Filter() {
             className="border border-gray-300 rounded ps-9 w-full p-2"
           >
             <option value="">Course Category</option>
+            {categories &&
+              categories.map((category, index) => (
+                <option key={index} value={category}>
+                  {category}
+                </option>
+              ))}
           </select>
           {/* keyword */}
           <input
