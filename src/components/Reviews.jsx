@@ -1,39 +1,19 @@
+import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Reviews() {
-  const reviews = [
-    {
-      review_id: 1,
-      reviewer_id: 2,
-      food_id: 1,
-      review_text: 'Taste just like Japan',
-      rating: 4,
-      review_date: 'Jun 16, 2024',
-      author: {
-        firstname: 'Justin',
-        lastname: 'Brown',
-        profile_image: 'https://randomuser.me/api/portraits/men/19.jpg'
-      }
-    },
-    {
-      review_id: 2,
-      reviewer_id: 2,
-      food_id: 1,
-      review_text: 'Authentic!',
-      rating: 3,
-      review_date: 'Jun 17, 2024',
-      author: {
-        firstname: 'Sammy',
-        lastname: 'Powel',
-        profile_image: 'https://randomuser.me/api/portraits/men/9.jpg'
-      }
-    }
-  ]
-
+  const [reviews, setReviews] = useState([])
   //handle star rating
   const [selectedRating, setSelectedRating] = useState(0)
+  const getReviews = async () => {
+    let { data } = await axios.get('http://localhost:4000/reviews?food_id=1')
+    setReviews(data)
+  }
+  useEffect(() => {
+    getReviews()
+  }, [])
 
   const handleRatingChange = (rating) => {
     setSelectedRating(rating)
@@ -50,12 +30,24 @@ function Reviews() {
           REVIEWS ({reviews.length})
         </div>
         {/* calculate the average rating */}
-        <div className="text-2xl font-serif font-bold">
-          RATING
-          {Math.ceil(
-            reviews.reduce((sum, review) => sum + review.rating, 0) /
-              reviews.length
-          )}
+        <div className="flex">
+          <div className="text-2xl font-serif font-bold mr-3">RATING</div>
+          <div>
+            {[
+              ...Array(
+                Math.ceil(
+                  reviews.reduce((sum, review) => sum + review.rating, 0) /
+                    reviews.length
+                )
+              )
+            ].map((star, index) => (
+              <FontAwesomeIcon
+                key={index}
+                icon={faStar}
+                className=" text-slate-500"
+              />
+            ))}
+          </div>
         </div>
         <hr />
         {/* form */}
