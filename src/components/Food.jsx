@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
 import Nav from './Nav'
@@ -7,32 +8,21 @@ import Footer from './Footer'
 import Swap from './Swap'
 
 function Food() {
-  const food = {
-    food_id: 2,
-    food_title: 'Tonkatsu Ramen',
-    country: 'Japan',
-    category: 'main dish',
-    ingredients:
-      'egg noodle, pork, seaweed, green onion, mushroom, soy sause, tare seasoning.',
-    description: `This ramen features a rich, savory broth made from pork bones. The name "tonkotsu" literally means "pork bones" in Japanese. The broth gets its deep, flavorful taste and creamy, cloudy appearance from boiling the pork bones for up to eighteen hours. This slow cooking process results in a hearty, satisfying bowl of ramen that's sure to warm you up and leave you craving more.`,
-    chef_id: 2,
-    rating: 3,
-    available: true,
-    chef: {
-      user_id: 2,
-      profile_image: 'url',
-      firstname: 'Justin',
-      lastname: 'Bieber'
-    },
-    images: [
-      'https://i1.wp.com/seonkyounglongest.com/wp-content/uploads/2020/09/Easy-Tonkotsu-26-mini.jpg',
-      'https://i0.wp.com/www.angsarap.net/wp-content/uploads/2022/03/Tonkotsu-Ramen-Wide.jpg',
-      'https://www.seriouseats.com/thmb/IBikLAGkkP2QVaF3vLIk_LeNqHM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/rich-and-creamy-tonkotsu-ramen-broth-from-scratch-recipe-Diana-Chistruga-hero-6d318fadcca64cc9ac3e1c40fc7682fb.JPG',
-      'https://www.seriouseats.com/thmb/GNFUxllntjgtfQiAd6lofC72JjY=/500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__20120227-tonkotsu-ramen-broth-pork-fat-24-1451c421c7d74cc08b0c2b3e26f1ec8f.jpg'
-    ]
-  }
+  const [food, setFood] = useState({})
+  const [selectedImage, setSelectedImage] = useState('')
 
-  const [selectedImage, setSelectedImage] = useState(food.images[0])
+  const getFood = async () => {
+    let { data } = await axios.get('http://localhost:4000/food/1')
+    setFood(data)
+  }
+  useEffect(() => {
+    getFood()
+  }, [])
+  useEffect(() => {
+    if (food.images && food.images.length > 0) {
+      setSelectedImage(food.images[0])
+    }
+  }, [food])
   return (
     <div className="container mx-auto">
       <div
@@ -54,18 +44,19 @@ function Food() {
               />
             </div>
             <div className=" grid grid-cols-3 gap-2 mt-3">
-              {food.images.slice(1).map((image, index) => (
-                <div key={index}>
-                  <img
-                    src={image}
-                    alt="food pic"
-                    className=" w-full h-full object-cover cursor-pointer"
-                    onClick={(event) => {
-                      setSelectedImage(image)
-                    }}
-                  />
-                </div>
-              ))}
+              {food.images &&
+                food.images.slice(1).map((image, index) => (
+                  <div key={index}>
+                    <img
+                      src={image}
+                      alt="food pic"
+                      className=" w-full h-full object-cover cursor-pointer"
+                      onClick={(event) => {
+                        setSelectedImage(image)
+                      }}
+                    />
+                  </div>
+                ))}
             </div>
           </div>
           {/* Text */}
@@ -85,7 +76,7 @@ function Food() {
               <div>
                 {[...Array(food.rating)].map((star, index) => (
                   <FontAwesomeIcon
-                    key={star}
+                    key={index}
                     icon={faStar}
                     className=" text-slate-500"
                   />
