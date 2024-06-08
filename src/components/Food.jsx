@@ -35,7 +35,7 @@ function Food() {
       <div className="flex justify-center">
         <div className="grid grid-cols-2 items-center place-items-center space-x-5 mx-40 my-28 ">
           {/* Gallery */}
-          <div className=" grid grid-rows-3 gap-2 place-items-start">
+          <div className=" grid grid-rows-3 place-items-start">
             <div className="grid row-span-2 aspect-square">
               <img
                 src={selectedImage}
@@ -50,7 +50,7 @@ function Food() {
                     <img
                       src={image}
                       alt="food pic"
-                      className=" w-full h-full object-cover cursor-pointer"
+                      className=" w-full h-full object-cover cursor-pointer aspect-square"
                       onClick={(event) => {
                         setSelectedImage(image)
                       }}
