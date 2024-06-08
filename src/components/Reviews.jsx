@@ -2,13 +2,18 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 function Reviews() {
+  const { id } = useParams()
   const [reviews, setReviews] = useState([])
   //handle star rating
   const [selectedRating, setSelectedRating] = useState(0)
   const getReviews = async () => {
-    let { data } = await axios.get('http://localhost:4000/reviews?food_id=1')
+    let { data } = await axios.get(
+      `http://localhost:4000/reviews?food_id=${id}`
+    )
+    console.log(data)
     setReviews(data)
   }
   useEffect(() => {
@@ -18,6 +23,7 @@ function Reviews() {
   const handleRatingChange = (rating) => {
     setSelectedRating(rating)
   }
+
   //passing reviews list to review()
   const reviewList = reviews.map((review) => (
     <Review key={review.review_id} review={review} />
