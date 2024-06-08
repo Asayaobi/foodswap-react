@@ -24,6 +24,11 @@ function Reviews() {
     setSelectedRating(rating)
   }
 
+  //calculate average rating
+  const averageRating = Math.ceil(
+    reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
+  )
+
   //passing reviews list to review()
   const reviewList = reviews.map((review) => (
     <Review key={review.review_id} review={review} />
@@ -40,14 +45,7 @@ function Reviews() {
           <div className="text-2xl font-serif font-bold mr-3">RATING</div>
           <div>
             {reviews.length > 0 ? (
-              [
-                ...Array(
-                  Math.ceil(
-                    reviews.reduce((sum, review) => sum + review.rating, 0) /
-                      reviews.length
-                  )
-                )
-              ].map((index) => (
+              [...Array(averageRating)].map((faStar, index) => (
                 <FontAwesomeIcon
                   key={index}
                   icon={faStar}
