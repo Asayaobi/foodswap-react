@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
@@ -10,9 +11,10 @@ import Swap from './Swap'
 function Food() {
   const [food, setFood] = useState({})
   const [selectedImage, setSelectedImage] = useState('')
+  const { id } = useParams()
 
   const getFood = async () => {
-    let { data } = await axios.get('http://localhost:4000/food/1')
+    let { data } = await axios.get(`http://localhost:4000/food/${id}`)
     setFood(data)
   }
   useEffect(() => {
