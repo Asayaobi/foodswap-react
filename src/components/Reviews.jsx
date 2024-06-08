@@ -41,7 +41,7 @@ function Reviews() {
                       reviews.length
                   )
                 )
-              ].map((star, index) => (
+              ].map((index) => (
                 <FontAwesomeIcon
                   key={index}
                   icon={faStar}
