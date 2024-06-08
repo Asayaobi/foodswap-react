@@ -33,20 +33,24 @@ function Reviews() {
         <div className="flex">
           <div className="text-2xl font-serif font-bold mr-3">RATING</div>
           <div>
-            {[
-              ...Array(
-                Math.ceil(
-                  reviews.reduce((sum, review) => sum + review.rating, 0) /
-                    reviews.length
+            {reviews.length > 0 ? (
+              [
+                ...Array(
+                  Math.ceil(
+                    reviews.reduce((sum, review) => sum + review.rating, 0) /
+                      reviews.length
+                  )
                 )
-              )
-            ].map((star, index) => (
-              <FontAwesomeIcon
-                key={index}
-                icon={faStar}
-                className=" text-slate-500"
-              />
-            ))}
+              ].map((star, index) => (
+                <FontAwesomeIcon
+                  key={index}
+                  icon={faStar}
+                  className="text-slate-500"
+                />
+              ))
+            ) : (
+              <span>No reviews yet</span>
+            )}
           </div>
         </div>
         <hr />
