@@ -1,13 +1,21 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 function Filter() {
+  const [cities, setCities] = useState([])
   const [country, setCountry] = useState([])
+  const getCities = async () => {
+    let { data } = await axios.get(`http://localhost:4000/city`)
+    setCities(data)
+  }
   const getCountry = async () => {
     let { data } = await axios.get(`http://localhost:4000/country`)
     setCountry(data)
   }
   useEffect(() => {
     getCountry()
+  }, [])
+  useEffect(() => {
+    getCities()
   }, [])
   return (
     <>
@@ -19,6 +27,12 @@ function Filter() {
             className="border border-gray-300 rounded ps-9 w-full p-2"
           >
             <option value="">Any Location</option>
+            {cities &&
+              cities.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
           </select>
           {/* country */}
           <select
