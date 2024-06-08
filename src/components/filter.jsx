@@ -1,4 +1,14 @@
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 function Filter() {
+  const [country, setCountry] = useState([])
+  const getCountry = async () => {
+    let { data } = await axios.get(`http://localhost:4000/country`)
+    setCountry(data)
+  }
+  useEffect(() => {
+    getCountry()
+  }, [])
   return (
     <>
       <form>
@@ -16,6 +26,12 @@ function Filter() {
             className="border border-gray-300 rounded ps-9 w-full p-2"
           >
             <option value="">Cuisine Type</option>
+            {country &&
+              country.map((c, index) => (
+                <option key={index} value={c}>
+                  {c}
+                </option>
+              ))}
           </select>
           {/* category */}
           <select
