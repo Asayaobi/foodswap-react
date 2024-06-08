@@ -1,13 +1,9 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 function Filter() {
-  const [cities, setCities] = useState([])
   const [countries, setCountries] = useState([])
   const [categories, setCategories] = useState([])
-  const getCities = async () => {
-    let { data } = await axios.get(`http://localhost:4000/city`)
-    setCities(data)
-  }
+
   const getCountries = async () => {
     let { data } = await axios.get(`http://localhost:4000/country`)
     setCountries(data)
@@ -16,12 +12,11 @@ function Filter() {
     let { data } = await axios.get(`http://localhost:4000/category`)
     setCategories(data)
   }
+
   useEffect(() => {
     getCountries()
   }, [])
-  useEffect(() => {
-    getCities()
-  }, [])
+
   useEffect(() => {
     getCategories()
   }, [])
@@ -29,19 +24,6 @@ function Filter() {
     <>
       <form>
         <div className="bg-slate-50 flex justify-center gap-4 px-48">
-          {/* location */}
-          <select
-            name="location"
-            className="border border-gray-300 rounded ps-9 w-full p-2"
-          >
-            <option value="">Any Location</option>
-            {cities &&
-              cities.map((city, index) => (
-                <option key={index} value={city}>
-                  {city}
-                </option>
-              ))}
-          </select>
           {/* country */}
           <select
             name="country"
@@ -68,15 +50,15 @@ function Filter() {
                 </option>
               ))}
           </select>
-          {/* keyword */}
+          {/* search */}
           <input
-            name="keyword"
+            name="search"
             className="border border-gray-300 rounded ps-9 w-full p-2"
             type="text"
             placeholder="keywords..."
           />
           {/* button */}
-          <button className="flex relative bg-slate-100 items-center p-5 border h-11 sm:w-full lg:w-40">
+          <button className="flex relative bg-slate-700 text-white rounded-md items-center p-5 border h-11 sm:w-full lg:w-40">
             Search
           </button>
         </div>
