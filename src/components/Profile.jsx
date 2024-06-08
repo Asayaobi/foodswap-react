@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
 function Profile() {
@@ -7,9 +8,10 @@ function Profile() {
     lastname: 'Johnsons',
     email: 'lily@123456.com',
     password: '$2b$10$GmZ4.eVEbMd3gBQS74pdPOv1iKnHdIgVkw61ihC5NAUgwmfSGmOc.',
-    profile_image: 'jack.jpg',
+    profile_image: 'https://randomuser.me/api/portraits/women/53.jpg',
     city: 'NYC'
   }
+  const [image, setImage] = useState(user.profile_image)
   return (
     <>
       <div className="relative h-screen">
@@ -19,12 +21,9 @@ function Profile() {
             <h1 className="text-2xl font-bold mb-8 font-serif">My Profile</h1>
             <form>
               <div className="grid grid-cols-3 gap-8">
+                {/* Display profile image  */}
                 <div>
-                  <img
-                    src="https://randomuser.me/api/portraits/women/16.jpg"
-                    alt="profile pic"
-                    className=" rounded-md"
-                  />
+                  <img src={image} alt="profile pic" className=" rounded-md" />
                 </div>
                 <div className=" col-span-2">
                   <div className="mb-4">
