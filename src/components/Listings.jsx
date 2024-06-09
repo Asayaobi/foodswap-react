@@ -8,6 +8,7 @@ axios.defaults.withCredentials = true
 function Listings() {
   const [listings, setListings] = useState([])
   const [food, createFood] = useState({})
+  const [errorMessage, setErrorMessage] = useState('')
   const submitForm = async (e) => {
     try {
       e.preventDefault()
@@ -27,8 +28,16 @@ function Listings() {
         formObject
       )
       createFood(data)
+      if (data.error) {
+        setErrorMessage(data.error)
+      }
     } catch (error) {
       console.error(error)
+      if (error.response && error.response.data) {
+        setErrorMessage(error.response.data.error)
+      } else {
+        setErrorMessage('An unexpected error occurred. Please try again.')
+      }
     }
   }
   const getListings = async () => {
@@ -131,6 +140,11 @@ function Listings() {
                     name="image"
                     className="border rounded py-2 px-3 w-full mb-2"
                   />
+                  {errorMessage && (
+                    <div className="flex justify-start text-sm text-red-500">
+                      {errorMessage}
+                    </div>
+                  )}
                   <div className="flex justify-end">
                     <button className="bg-orange-500 hover:bg-orange-300 text-white mt-2 py-3 px-8 tracking-widest">
                       ADD THIS DISH
