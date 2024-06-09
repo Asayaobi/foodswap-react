@@ -7,16 +7,26 @@ axios.defaults.withCredentials = true
 
 function Listings() {
   const [listings, setListings] = useState([])
+  const [food, createFood] = useState({})
   const submitForm = async (e) => {
     try {
       e.preventDefault()
       let form = new FormData(e.target)
-      let formObject = Object.fromEntries(form.entries())
+      const formObject = {
+        food_title: e.target.food_title.value,
+        country: e.target.country.value,
+        category: e.target.category.value,
+        ingredients: e.target.ingredients.value,
+        description: e.target.description.value,
+        available: e.target.available.value,
+        images: form.getAll('image')
+      }
       console.log(formObject)
       const { data } = await axios.post(
         'http://localhost:4000/food',
         formObject
       )
+      createFood(data)
     } catch (error) {
       console.error(error)
     }
@@ -85,7 +95,7 @@ function Listings() {
                   <div className="mb-4">
                     <label className="block mb-2">Availability</label>
                     <select
-                      name="availability"
+                      name="available"
                       className="border rounded w-full py-2 px-3"
                     >
                       <option value="true">Ready to swap</option>
@@ -103,18 +113,22 @@ function Listings() {
                   <label className="block mb-2 mt-2">Images</label>
                   <input
                     type="text"
+                    name="image"
                     className="border rounded py-2 px-3 w-full mb-2"
                   />
                   <input
                     type="text"
+                    name="image"
                     className="border rounded py-2 px-3 w-full mb-2"
                   />
                   <input
                     type="text"
+                    name="image"
                     className="border rounded py-2 px-3 w-full mb-2"
                   />
                   <input
                     type="text"
+                    name="image"
                     className="border rounded py-2 px-3 w-full mb-2"
                   />
                   <div className="flex justify-end">
