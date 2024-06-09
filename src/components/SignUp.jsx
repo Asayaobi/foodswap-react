@@ -5,8 +5,8 @@ axios.defaults.withCredentials = true
 
 function SignUp() {
   const [validEmail, setValidEmail] = useState(true)
+  const [validPassword, setValidPassword] = useState(true)
 
-  // declare useNavigate
   const navigate = useNavigate()
   //functions
   //checks if email has @ and . validEmail is true
@@ -17,6 +17,15 @@ function SignUp() {
       setValidEmail(false)
     }
   }
+  //checks if password is longer than 6 characters
+  const validatePassword = (password) => {
+    if (password.length > 6) {
+      setValidPassword(true)
+    } else {
+      setValidPassword(false)
+    }
+  }
+
   return (
     <div className="flex">
       <div className=" w-1/2">
@@ -71,12 +80,18 @@ function SignUp() {
             />
             <div className="py-3">
               <label>Password</label>
+              {!validPassword && (
+                <span className="ml-1 text-red-500 text-sm">
+                  Password must be longer than 6 characters
+                </span>
+              )}
             </div>
             <input
               type="password"
               name="password"
               className="border w-full p-1 rounded"
               autoFocus
+              onChange={(e) => validatePassword(e.target.value)}
             />
             <div className="py-3">
               <label>Profile Picture</label>
