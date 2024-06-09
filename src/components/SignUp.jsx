@@ -6,6 +6,7 @@ axios.defaults.withCredentials = true
 function SignUp() {
   const [validEmail, setValidEmail] = useState(true)
   const [validPassword, setValidPassword] = useState(true)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const navigate = useNavigate()
   //functions
@@ -25,7 +26,42 @@ function SignUp() {
       setValidPassword(false)
     }
   }
-
+  //submit the form
+  const submitForm = async (e) => {
+    try {
+      if (validEmail && validPassword) {
+        e.preventDefault()
+        const formContent = {
+          firstname: e.target.firstname.value,
+          lastname: e.target.lastname.value,
+          email: e.target.email.value,
+          password: e.target.password.value,
+          profile_image: e.target.profile_image.value,
+          city: e.target.city.value
+        }
+        console.log('formcontent', formContent)
+        let { data } = await axios.post(
+          'http://localhost:4000/signup',
+          formContent
+        )
+        console.log('response from data', data)
+        if (data.error) {
+          setErrorMessage(data.error)
+        } else {
+          navigate('/')
+        }
+      } else {
+        setErrorMessage('Please complete the form carefuly.')
+      }
+    } catch (error) {
+      console.error(error)
+      if (error.response && error.response.data) {
+        setErrorMessage(error.response.data.error)
+      } else {
+        setErrorMessage('An unexpected error occurred. Please try again.')
+      }
+    }
+  }
   return (
     <div className="flex">
       <div className=" w-1/2">
@@ -46,8 +82,8 @@ function SignUp() {
               />
             </Link>
           </div>
-          {/* Log In Form */}
-          <form>
+          {/* Sign Up Form */}
+          <form onSubmit={(e) => submitForm(e)}>
             <div className="py-3">Name</div>
             <div className=" grid grid-cols-3 gap-3">
               <input
@@ -121,6 +157,11 @@ function SignUp() {
               <div className="text-orange-600">Log In here</div>
             </Link>
           </div>
+          {errorMessage && (
+            <div className=" text-center text-red-500 text-sm">
+              {errorMessage}
+            </div>
+          )}
         </div>
       </div>
     </div>
