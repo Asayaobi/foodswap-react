@@ -1,9 +1,13 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 function Filter() {
+  const [cities, setCities] = useState([])
   const [countries, setCountries] = useState([])
   const [categories, setCategories] = useState([])
-
+  const getCities = async () => {
+    let { data } = await axios.get(`http://localhost:4000/city`)
+    setCities(data)
+  }
   const getCountries = async () => {
     let { data } = await axios.get(`http://localhost:4000/country`)
     setCountries(data)
@@ -12,7 +16,9 @@ function Filter() {
     let { data } = await axios.get(`http://localhost:4000/category`)
     setCategories(data)
   }
-
+  useEffect(() => {
+    getCities()
+  }, [])
   useEffect(() => {
     getCountries()
   }, [])
@@ -24,6 +30,19 @@ function Filter() {
     <>
       <form>
         <div className="bg-slate-50 flex justify-center gap-4 px-48">
+          {/* city */}
+          <select
+            name="city"
+            className="border border-gray-300 rounded ps-9 w-full p-2"
+          >
+            <option value="">Any Location</option>
+            {cities &&
+              cities.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
+          </select>
           {/* country */}
           <select
             name="country"
