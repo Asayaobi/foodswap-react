@@ -29,12 +29,11 @@ function Card(props) {
           <div className="flex justify-center gap-5">
             <div className="text-slate-500">{foodlist.country}</div>
             <div>
-              {[1, 2, 3, 4, 5].map((star) => (
+              {[...Array(foodlist.rating)].map((star, index) => (
                 <FontAwesomeIcon
-                  key={star}
-                  icon={star <= foodlist.rating ? faStar : ''}
-                  className=" text-slate-400"
-                  size="sm"
+                  key={index}
+                  icon={faStar}
+                  className=" text-slate-500"
                 />
               ))}
             </div>
