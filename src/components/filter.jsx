@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-function Filter() {
+function Filter({ setFoodList }) {
   const [cities, setCities] = useState([])
   const [countries, setCountries] = useState([])
   const [categories, setCategories] = useState([])
@@ -15,6 +15,32 @@ function Filter() {
   const getCategories = async () => {
     let { data } = await axios.get(`http://localhost:4000/category`)
     setCategories(data)
+  }
+  //function to prevent default then get data to api
+  const submitForm = async (e) => {
+    try {
+      e.preventDefault()
+      //making query for url
+      //encodeURIComponent removes spaces between values
+      let queryArray = []
+      if (e.target.city.value) {
+        queryArray.push(`city=${encodeURIComponent(e.target.city.value)}`)
+      }
+      if (e.target.country.value) {
+        queryArray.push(`country=${e.target.country.value}`)
+      }
+      if (e.target.category.value) {
+        queryArray.push(`category=${e.target.category.value}`)
+      }
+      if (e.target.search.value) {
+        queryArray.push(`search=${e.target.search.value}`)
+      }
+      let url = `http://localhost:4000/food?${queryArray.join('&')}`
+      const { data } = await axios.get(url)
+      setFoodList(data)
+    } catch (error) {
+      console.error(error)
+    }
   }
   useEffect(() => {
     getCities()
