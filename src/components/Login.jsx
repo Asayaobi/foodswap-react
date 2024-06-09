@@ -1,6 +1,41 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+axios.defaults.withCredentials = true
 
 function LogIn() {
+  const [errorMessage, setErrorMessage] = useState('')
+  const navigate = useNavigate()
+
+  const submitForm = async (e) => {
+    try {
+      // 1. prevent the browser from submitting the form
+      e.preventDefault()
+      //2. filter the value error
+      if (!e.target.email.value || !e.target.password.value) {
+        setErrorMessage('either email or password is missing')
+      }
+      // 3. extract the content of the form
+      let form = new FormData(e.target)
+      // 4. convert form into an object
+      let formObject = Object.fromEntries(form.entries())
+      // 5. log the object to see what's inside
+      console.log(formObject)
+      const { data } = await axios.post(
+        'http://localhost:4000/login',
+        formObject
+      )
+      if (data.error) {
+        setErrorMessage(data.error)
+      } else {
+        navigate('/')
+      }
+    } catch (error) {
+      console.error(error)
+      setErrorMessage(error.response.data.error)
+    }
+  }
   return (
     <div className="flex">
       <div className=" w-1/2">
@@ -20,7 +55,7 @@ function LogIn() {
             />
           </Link>
           {/* Log In Form */}
-          <form>
+          <form onSubmit={(e) => submitForm(e)}>
             <div className="py-3">
               <label>Email</label>
             </div>
@@ -49,6 +84,9 @@ function LogIn() {
               <div className="text-orange-600">Create an account here</div>
             </Link>
           </div>
+          {errorMessage && (
+            <div className=" text-red-500 text-xs mt-3">{errorMessage}</div>
+          )}
         </div>
       </div>
     </div>
