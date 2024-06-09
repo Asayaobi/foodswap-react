@@ -85,7 +85,9 @@ function LogIn() {
             </Link>
           </div>
           {errorMessage && (
-            <div className=" text-red-500 text-xs mt-3">{errorMessage}</div>
+            <div className=" text-red-500 text-center text-xs mt-3">
+              {errorMessage}
+            </div>
           )}
         </div>
       </div>
