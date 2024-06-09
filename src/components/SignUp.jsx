@@ -1,6 +1,22 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { useState } from 'react'
+axios.defaults.withCredentials = true
 
 function SignUp() {
+  const [validEmail, setValidEmail] = useState(true)
+
+  // declare useNavigate
+  const navigate = useNavigate()
+  //functions
+  //checks if email has @ and . validEmail is true
+  const validateEmail = (email) => {
+    if (email.includes('@') && email.includes('.')) {
+      setValidEmail(true)
+    } else {
+      setValidEmail(false)
+    }
+  }
   return (
     <div className="flex">
       <div className=" w-1/2">
@@ -42,12 +58,16 @@ function SignUp() {
             </div>
             <div className="py-3">
               <label>Email</label>
+              {!validEmail && (
+                <span className="ml-1 text-red-500 text-sm">Invalid Email</span>
+              )}
             </div>
             <input
               type="email"
               name="email"
               className="border w-full p-1 rounded"
               autoFocus
+              onChange={(e) => validateEmail(e.target.value)}
             />
             <div className="py-3">
               <label>Password</label>
