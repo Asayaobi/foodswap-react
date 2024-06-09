@@ -7,7 +7,20 @@ axios.defaults.withCredentials = true
 
 function Listings() {
   const [listings, setListings] = useState([])
-
+  const submitForm = async (e) => {
+    try {
+      e.preventDefault()
+      let form = new FormData(e.target)
+      let formObject = Object.fromEntries(form.entries())
+      console.log(formObject)
+      const { data } = await axios.post(
+        'http://localhost:4000/food',
+        formObject
+      )
+    } catch (error) {
+      console.error(error)
+    }
+  }
   const getListings = async () => {
     let { data } = await axios.get('http://localhost:4000/listings')
     setListings(data)
@@ -29,7 +42,7 @@ function Listings() {
           <Nav />
           <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg max-w-4xl w-full">
             <h1 className="text-2xl font-bold mb-8 font-serif">My Dish</h1>
-            <form>
+            <form onSubmit={(e) => submitForm(e)}>
               <div className="grid grid-cols-3 gap-8">
                 <div>
                   <div className="mb-4">
@@ -50,11 +63,16 @@ function Listings() {
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2">Course Category</label>
-                    <input
-                      type="text"
+                    <select
                       name="category"
                       className="border rounded w-full py-2 px-3"
-                    />
+                    >
+                      <option value="">Course Category</option>
+                      <option value="breakfasr">breakfast</option>
+                      <option value="appetizer">appetizer</option>
+                      <option value="main dish">main dish</option>
+                      <option value="dessert">dessert</option>
+                    </select>
                   </div>
                   <div className="mb-4">
                     <label className="block mb-2">Ingredients</label>

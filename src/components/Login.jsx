@@ -30,6 +30,7 @@ function LogIn() {
         setErrorMessage(data.error)
       } else {
         navigate('/')
+        localStorage.setItem('isLoggedIn', true)
       }
     } catch (error) {
       console.error(error)
