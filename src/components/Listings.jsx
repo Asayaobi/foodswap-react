@@ -1,35 +1,21 @@
 import Card from './Card'
 import Nav from './Nav'
 import Footer from './Footer'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+axios.defaults.withCredentials = true
+
 function Listings() {
-  const listings = [
-    {
-      food_id: 9,
-      food_title: 'Pad Kra Pow',
-      country: 'Thailand',
-      category: 'main dish',
-      ingredients: 'pork, oyster sauce, holy basil, fish sauce, rice, egg',
-      description: `Pad kra pao is a Thai holy basil stir fry that I think deserves the title: "National dish of Thailand". It’s a favourite of Thai people and Thai food lovers around the world, and if you're getting into Thai food, this has to be on your to-do list.`,
-      chef_id: 10,
-      rating: 3,
-      available: true,
-      url: 'https://thejournalistclub.com/wp-content/uploads/2022/06/1-%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2-.jpeg'
-    },
-    {
-      food_id: 10,
-      food_title: 'Mango Sticky Rice',
-      country: 'Thailand',
-      category: 'dessert',
-      ingredients:
-        'rice, mango, coconut milk, palm sugar, pandan, dried soy beans',
-      description:
-        'Thai Mango Sticky Rice with glutinous coconut rice and fresh, sweet ripe mangoes with a coconut sauce. A delicious Thai dessert!',
-      chef_id: 10,
-      rating: 4,
-      available: true,
-      url: 'https://www.allrecipes.com/thmb/yeUwoCu2irwqGDb-3PHJHnaX2C4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-150313-thai-sweet-sticky-rice-with-mango-khao-neeo-mamuang-ddmfs-4x3-hero-0da7a9b26cce4d07aea44f2f2b6abd95.jpg'
-    }
-  ]
+  const [listings, setListings] = useState([])
+
+  const getListings = async () => {
+    let { data } = await axios.get('http://localhost:4000/listings')
+    setListings(data)
+  }
+
+  useEffect(() => {
+    getListings()
+  }, [])
 
   const listOfCards = listings.map((food, index) => (
     <Card key={index} food={food} isListing={true} />
