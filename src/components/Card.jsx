@@ -40,18 +40,31 @@ function Card(props) {
         <div className="pt-4 text-center">
           <div className="text-lg font-semibold">{foodlist.food_title}</div>
           <hr />
-
+          {/* country - availability feature */}
           <div className="flex justify-center gap-5">
-            <div className="text-slate-500">{foodlist.country}</div>
-            <div>
-              {[...Array(foodlist.rating)].map((star, index) => (
-                <FontAwesomeIcon
-                  key={index}
-                  icon={faStar}
-                  className=" text-slate-500"
-                />
-              ))}
-            </div>
+            {isListing ? (
+              <>
+                <div className="text-slate-500">Availibility</div>
+                {foodlist.available ? (
+                  <div className=" text-green-900"> Ready to swap </div>
+                ) : (
+                  <div className=" text-slate-500"> Not today </div>
+                )}
+              </>
+            ) : (
+              <>
+                <div className="text-slate-500">{foodlist.country}</div>
+                <div>
+                  {[...Array(foodlist.rating)].map((star, index) => (
+                    <FontAwesomeIcon
+                      key={index}
+                      icon={faStar}
+                      className=" text-slate-500"
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
           {/* button */}
           {!isListing && !isBooking && !isRequested ? (
