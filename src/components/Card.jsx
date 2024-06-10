@@ -9,10 +9,10 @@ function Card(props) {
   const isBooking = props.isBooking
   const isRequested = props.isRequested
   console.log('props', foodlist)
+
   //update swap request
   const updateSwapStatus = async (e, bookingId) => {
     try {
-      e.preventDefault()
       const formObject = {
         booking_id: bookingId,
         swap: e.target.value
@@ -20,11 +20,11 @@ function Card(props) {
       console.log('formObject', formObject)
       let { data } = await axios.patch('http://localhost:4000/swap', formObject)
       console.log('response data', data)
+      window.location.reload()
     } catch (error) {
       console.error(error)
     }
   }
-
   return (
     <>
       <div className="bg-white shadow-lg hover:bg-slate-100 rounded-b-md">
@@ -70,8 +70,8 @@ function Card(props) {
             </Link>
           ) : null}
           {/* From Booking */}
-          {isBooking ? (
-            foodlist.swap === 'swap' ? (
+          {isBooking &&
+            (foodlist.swap === 'swap' ? (
               <div className=" bg-green-800 px-10 text-white tracking-widest pb-4 rounded-b-md">
                 SWAPPED
               </div>
@@ -83,11 +83,10 @@ function Card(props) {
               <button className="  w-full  mt-2 pb-4 rounded-b-md">
                 CANCELLED
               </button>
-            )
-          ) : null}
+            ))}
           {/* From Request */}
-          {isRequested ? (
-            foodlist.swap !== 'swap' ? (
+          {isRequested &&
+            (foodlist.swap === 'pending' ? (
               <select
                 name="swap"
                 onChange={(e) => updateSwapStatus(e, foodlist.booking_id)}
@@ -96,12 +95,15 @@ function Card(props) {
                 <option value="swap">Approve Swap</option>
                 <option value="cancel">Cancel Request</option>
               </select>
-            ) : (
+            ) : foodlist.swap === 'swap' ? (
               <div className=" bg-green-800 px-10 text-white hover:bg-green-900 tracking-widest pb-4 rounded-b-md">
                 SWAPPED
               </div>
-            )
-          ) : null}
+            ) : (
+              <div className=" bg-slate-800 px-10 text-white hover:bg-red-400 tracking-widest pb-4 rounded-b-md">
+                CANCELLED
+              </div>
+            ))}
         </div>
       </div>
     </>
