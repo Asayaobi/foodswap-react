@@ -1,4 +1,5 @@
-function Swap() {
+function Swap({ foodId }) {
+  console.log('foodId', foodId)
   return (
     <div className=" text-center px-4">
       <form>

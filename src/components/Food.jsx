@@ -94,7 +94,7 @@ function Food() {
               <div className="pb-3">{food.category}</div>
               <hr />
             </div>
-            <Swap />
+            <Swap foodId={food.food_id} />
           </div>
         </div>
       </div>
