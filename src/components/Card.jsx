@@ -10,14 +10,16 @@ function Card(props) {
   const isRequested = props.isRequested
   console.log('props', foodlist)
   //update swap request
-  const submitForm = async (e) => {
+  const updateSwapStatus = async (e, bookingId) => {
     try {
       e.preventDefault()
       const formObject = {
-        booking_id: foodlist.booking_id,
-        swap: e.target.swap.value
+        booking_id: bookingId,
+        swap: e.target.value
       }
-      await axios.patch('http://localhost:4000/swap', formObject)
+      console.log('formObject', formObject)
+      let { data } = await axios.patch('http://localhost:4000/swap', formObject)
+      console.log('response data', data)
     } catch (error) {
       console.error(error)
     }
@@ -86,13 +88,14 @@ function Card(props) {
           {/* From Request */}
           {isRequested ? (
             foodlist.swap !== 'swap' ? (
-              <form onSubmit={(e) => submitForm(e)}>
-                <select name="swap">
-                  <option value="pending">Pending</option>
-                  <option value="swap">Approve Swap</option>
-                  <option value="cancel">Cancel Request</option>
-                </select>
-              </form>
+              <select
+                name="swap"
+                onChange={(e) => updateSwapStatus(e, foodlist.booking_id)}
+              >
+                <option value="pending">Pending</option>
+                <option value="swap">Approve Swap</option>
+                <option value="cancel">Cancel Request</option>
+              </select>
             ) : (
               <div className=" bg-green-800 px-10 text-white hover:bg-green-900 tracking-widest pb-4 rounded-b-md">
                 SWAPPED
