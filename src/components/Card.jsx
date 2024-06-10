@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
+import axios from 'axios'
 
 function Card(props) {
   const foodlist = props.food
@@ -8,8 +9,20 @@ function Card(props) {
   const isBooking = props.isBooking
   const isRequested = props.isRequested
   console.log('props', foodlist)
-  console.log('props booking', isBooking)
-  console.log('listing', isListing)
+  //update swap request
+  const submitForm = async (e) => {
+    try {
+      e.preventDefault()
+      const formObject = {
+        booking_id: foodlist.booking_id,
+        swap: e.target.swap.value
+      }
+      await axios.patch('http://localhost:4000/swap', formObject)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <>
       <div className="bg-white shadow-lg hover:bg-slate-100 rounded-b-md">
@@ -73,11 +86,11 @@ function Card(props) {
           {/* From Request */}
           {isRequested ? (
             foodlist.swap !== 'swap' ? (
-              <form>
-                <select>
-                  <option>Pending</option>
-                  <option>Approve Swap</option>
-                  <option>Cancel Request</option>
+              <form onSubmit={(e) => submitForm(e)}>
+                <select name="swap">
+                  <option value="pending">Pending</option>
+                  <option value="swap">Approve Swap</option>
+                  <option value="cancel">Cancel Request</option>
                 </select>
               </form>
             ) : (
