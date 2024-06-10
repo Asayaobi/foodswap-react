@@ -12,7 +12,6 @@ function Listings() {
   const submitForm = async (e) => {
     try {
       e.preventDefault()
-      let form = new FormData(e.target)
       const formObject = {
         food_title: e.target.food_title.value,
         country: e.target.country.value,
@@ -20,7 +19,7 @@ function Listings() {
         ingredients: e.target.ingredients.value,
         description: e.target.description.value,
         available: e.target.available.value,
-        images: form.getAll('image')
+        images: new FormData(e.target).getAll('image')
       }
       console.log(formObject)
       const { data } = await axios.post(
@@ -28,6 +27,7 @@ function Listings() {
         formObject
       )
       createFood(data)
+      console.log('response data', data)
       if (data.error) {
         setErrorMessage(data.error)
       }
