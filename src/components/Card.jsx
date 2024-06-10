@@ -14,7 +14,7 @@ function Card(props) {
     <>
       <div className="bg-white shadow-lg hover:bg-slate-100 rounded-b-md">
         <div className="relative aspect-square">
-          <Link to={`http://localhost:3001/food/${foodlist.food_id}`}>
+          <Link to={`/food/${foodlist.food_id}`}>
             <img
               src={foodlist.url}
               alt="food pic"
@@ -46,7 +46,7 @@ function Card(props) {
           ) : null}
           {/* From Listing */}
           {isListing ? (
-            <Link to={`http://localhost:3001/food/${foodlist.food_id}/edit`}>
+            <Link to={`/food/${foodlist.food_id}/edit`}>
               <button className=" bg-slate-700  hover:bg-yellow-500 w-full text-white mt-2 pb-4 rounded-b-md">
                 EDIT
               </button>
