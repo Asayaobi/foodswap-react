@@ -5,35 +5,46 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 axios.defaults.withCredentials = true
 function Bookings() {
+  //incoming food request
   const [request, setRequest] = useState([])
+  //response from swap request
+  const [bookings, setBookings] = useState([])
   const getFoodRequest = async () => {
     let { data } = await axios.get('http://localhost:4000/request')
     console.log('request', data)
     setRequest(data)
   }
+  const getBookings = async () => {
+    let { data } = await axios.get('http://localhost:4000/bookings')
+    console.log('booking status', data)
+    setBookings(data)
+  }
   useEffect(() => {
     getFoodRequest()
+  }, [])
+  useEffect(() => {
+    getBookings()
   }, [])
   const RequestCards = request.map((food, index) => (
     <Card key={index} food={food} isRequested={true} />
   ))
 
-  const bookings = [
-    {
-      booking_id: 5,
-      food_id: 1,
-      user_id: 12,
-      message: 'big portion please',
-      booking_date: '2024-06-14T22:00:00.000Z',
-      swap: 'pending',
-      food_title: 'Pizza Margherita ',
-      country: 'Italy',
-      chef_id: 11,
-      rating: 5,
-      available: true,
-      url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/99/8d/b7.jpg'
-    }
-  ]
+  // const bookings = [
+  //   {
+  //     booking_id: 5,
+  //     food_id: 1,
+  //     user_id: 12,
+  //     message: 'big portion please',
+  //     booking_date: '2024-06-14T22:00:00.000Z',
+  //     swap: 'pending',
+  //     food_title: 'Pizza Margherita ',
+  //     country: 'Italy',
+  //     chef_id: 11,
+  //     rating: 5,
+  //     available: true,
+  //     url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/99/8d/b7.jpg'
+  //   }
+  // ]
   const BookingCards = bookings.map((food, index) => (
     <Card key={index} food={food} isBooking={true} />
   ))
