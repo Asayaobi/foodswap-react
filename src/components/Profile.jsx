@@ -17,6 +17,7 @@ function Profile() {
       <div className="relative h-screen">
         <div className="absolute inset-0 bg-[url('https://preview.codeless.co/picante/default/wp-content/uploads/2018/07/home02_03-compressed.jpg')] bg-cover bg-center"></div>
         <div className="absolute inset-0 flex items-center justify-center  z-10">
+          <Nav />
           <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg">
             <h1 className="text-2xl font-bold mb-8 font-serif">My Profile</h1>
             <form>
@@ -74,7 +75,6 @@ function Profile() {
             </form>
           </div>
         </div>
-        <Nav />
       </div>
 
       <Footer />
