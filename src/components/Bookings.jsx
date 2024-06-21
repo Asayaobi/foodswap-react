@@ -10,14 +10,32 @@ function Bookings() {
   //response from swap request
   const [bookings, setBookings] = useState([])
   const getFoodRequest = async () => {
-    let { data } = await axios.get('http://localhost:4000/request')
-    console.log('request', data)
-    setRequest(data)
+    try {
+      let { data } = await axios.get('http://localhost:4000/request')
+      console.log('request', data)
+      if (!data.error && Array.isArray(data)) {
+        setRequest(data)
+      } else {
+        setRequest([]) // Ensure request is an array
+      }
+    } catch (error) {
+      console.error('Error fetching food request:', error)
+      setRequest([]) // Ensure request is an array
+    }
   }
   const getBookings = async () => {
-    let { data } = await axios.get('http://localhost:4000/bookings')
-    console.log('booking status', data)
-    setBookings(data)
+    try {
+      let { data } = await axios.get('http://localhost:4000/bookings')
+      console.log('booking status', data)
+      if (!data.error) {
+        setBookings(data)
+      } else {
+        setBookings([])
+      }
+    } catch (error) {
+      console.error('Error fetching bookings')
+      setBookings([])
+    }
   }
   useEffect(() => {
     getFoodRequest()
@@ -25,29 +43,6 @@ function Bookings() {
   useEffect(() => {
     getBookings()
   }, [])
-  const RequestCards = request.map((food, index) => (
-    <Card key={index} food={food} isRequested={true} />
-  ))
-
-  // const bookings = [
-  //   {
-  //     booking_id: 5,
-  //     food_id: 1,
-  //     user_id: 12,
-  //     message: 'big portion please',
-  //     booking_date: '2024-06-14T22:00:00.000Z',
-  //     swap: 'pending',
-  //     food_title: 'Pizza Margherita ',
-  //     country: 'Italy',
-  //     chef_id: 11,
-  //     rating: 5,
-  //     available: true,
-  //     url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/99/8d/b7.jpg'
-  //   }
-  // ]
-  const BookingCards = bookings.map((food, index) => (
-    <Card key={index} food={food} isBooking={true} />
-  ))
 
   return (
     <>
@@ -64,7 +59,13 @@ function Bookings() {
             Incoming Swap Request
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-36">
-            {RequestCards}
+            {request && request.length > 0 ? (
+              request.map((food, index) => (
+                <Card key={index} food={food} isRequested={true} />
+              ))
+            ) : (
+              <div>No incoming requests</div>
+            )}
           </div>
         </div>
       </div>
@@ -75,7 +76,13 @@ function Bookings() {
             Your Swap Request Status
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-36">
-            {BookingCards}
+            {bookings && bookings.length > 0 ? (
+              bookings.map((food, index) => (
+                <Card key={index} food={food} isBooking={true} />
+              ))
+            ) : (
+              <div>You havn't made any swap</div>
+            )}
           </div>
         </div>
       </div>
