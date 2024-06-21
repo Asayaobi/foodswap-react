@@ -31,19 +31,19 @@ function Nav() {
               Home
             </button>
           </Link>
-          <Link to="/listings">
-            <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:border border-white">
-              My Kitchen
-            </button>
-          </Link>
-          <Link to="/bookings">
-            <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:border border-white">
-              Swap Request
-            </button>
-          </Link>
 
-          {isLoggedIn && (
+          {isLoggedIn ? (
             <>
+              <Link to="/listings">
+                <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:border border-white">
+                  My Kitchen
+                </button>
+              </Link>
+              <Link to="/bookings">
+                <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:border border-white">
+                  Swap Request
+                </button>
+              </Link>
               <Link to="/profile">
                 <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:border border-white">
                   My Profile
@@ -55,6 +55,19 @@ function Nav() {
               >
                 Log Out
               </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                  Log In
+                </button>
+              </Link>
+              <Link to="/signup">
+                <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                  Sign Up
+                </button>
+              </Link>
             </>
           )}
         </div>
