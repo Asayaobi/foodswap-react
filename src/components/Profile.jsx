@@ -1,17 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
+import axios from 'axios'
+
 function Profile() {
-  const user = {
-    user_id: 11,
-    firstname: 'Lily',
-    lastname: 'Johnsons',
-    email: 'lily@123456.com',
-    password: '$2b$10$GmZ4.eVEbMd3gBQS74pdPOv1iKnHdIgVkw61ihC5NAUgwmfSGmOc.',
-    profile_image: 'https://randomuser.me/api/portraits/women/53.jpg',
-    city: 'NYC'
+  const [user, setUser] = useState({})
+  const getUser = async () => {
+    try {
+      let { data } = await axios.get('http://localhost:4000/profile')
+      setUser(data)
+    } catch (err) {
+      console.error(err.message)
+    }
   }
-  const [image, setImage] = useState(user.profile_image)
+  useEffect(() => {
+    getUser()
+  }, [])
   return (
     <>
       <div className="relative h-screen">
@@ -24,7 +28,11 @@ function Profile() {
               <div className="grid grid-cols-3 gap-8">
                 {/* Display profile image  */}
                 <div>
-                  <img src={image} alt="profile pic" className=" rounded-md" />
+                  <img
+                    src={user.profile_image}
+                    alt="profile pic"
+                    className=" rounded-md"
+                  />
                 </div>
                 <div className=" col-span-2">
                   <div className="mb-4">
@@ -51,8 +59,7 @@ function Profile() {
                       type="text"
                       name="profile_image"
                       className="border rounded w-full py-2 px-3"
-                      placeholder={image}
-                      onChange={(e) => setImage(e.target.value)}
+                      placeholder={user.profile_image}
                     />
                   </div>
                   <div className="mb-4">
