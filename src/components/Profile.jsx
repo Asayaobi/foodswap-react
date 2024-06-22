@@ -13,6 +13,17 @@ function Profile() {
       console.error(err.message)
     }
   }
+  const patchUser = async (e) => {
+    try {
+      e.preventDefault()
+      const form = new FormData(e.target)
+      const formObject = Object.fromEntries(form.entries())
+      await axios.patch('http://localhost:4000/profile', formObject)
+      window.location.reload()
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
   useEffect(() => {
     getUser()
   }, [])
@@ -24,7 +35,7 @@ function Profile() {
           <Nav />
           <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg">
             <h1 className="text-2xl font-bold mb-8 font-serif">My Profile</h1>
-            <form>
+            <form onSubmit={patchUser}>
               <div className="grid grid-cols-3 gap-8">
                 {/* Display profile image  */}
                 <div>
@@ -71,7 +82,6 @@ function Profile() {
                       placeholder={user.city}
                     />
                   </div>
-
                   <div className="flex justify-end">
                     <button className="bg-orange-500 hover:bg-orange-300 text-white mt-2 py-3 px-4 tracking-widest rounded-sm">
                       UPDATE PROFILE
