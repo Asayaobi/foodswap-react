@@ -165,15 +165,11 @@ function Listings() {
       <div className="text-center bg-slate-100 py-4">
         <div className="grid justify-stretch pb-28 pt-10 px-48">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {listings && listings.length > 0 ? (
+            {listings &&
+              listings.length > 0 &&
               listings.map((food, index) => (
                 <Card key={index} food={food} isListing={true} />
-              ))
-            ) : (
-              <>
-                <div>No food listed.</div>
-              </>
-            )}
+              ))}
           </div>
         </div>
       </div>
