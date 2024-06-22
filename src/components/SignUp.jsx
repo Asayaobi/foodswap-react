@@ -48,6 +48,7 @@ function SignUp() {
         if (data.error) {
           setErrorMessage(data.error)
         } else {
+          localStorage.setItem('isLoggedIn', true)
           navigate('/')
         }
       } else {
