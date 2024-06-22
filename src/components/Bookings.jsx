@@ -81,7 +81,7 @@ function Bookings() {
                 <Card key={index} food={food} isBooking={true} />
               ))
             ) : (
-              <div>You havn't made any swap</div>
+              <div>You haven't made any swap.</div>
             )}
           </div>
         </div>
