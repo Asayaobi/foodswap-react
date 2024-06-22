@@ -41,17 +41,22 @@ function Listings() {
     }
   }
   const getListings = async () => {
-    let { data } = await axios.get('http://localhost:4000/listings')
-    setListings(data)
+    try {
+      let { data } = await axios.get('http://localhost:4000/listings')
+      if (!data.error && Array.isArray(data)) {
+        setListings(data)
+      } else {
+        setListings([])
+      }
+    } catch (error) {
+      console.error('Error fetching food listings', error)
+      setListings([])
+    }
   }
 
   useEffect(() => {
     getListings()
   }, [])
-
-  const listOfCards = listings.map((food, index) => (
-    <Card key={index} food={food} isListing={true} />
-  ))
 
   return (
     <>
@@ -160,7 +165,15 @@ function Listings() {
       <div className="text-center bg-slate-100 py-4">
         <div className="grid justify-stretch pb-28 pt-10 px-48">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {listOfCards}
+            {listings && listings.length > 0 ? (
+              listings.map((food, index) => (
+                <Card key={index} food={food} isListing={true} />
+              ))
+            ) : (
+              <>
+                <div>No food listed.</div>
+              </>
+            )}
           </div>
         </div>
       </div>
