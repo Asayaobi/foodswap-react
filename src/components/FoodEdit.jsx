@@ -1,6 +1,6 @@
 import Nav from './Nav'
 import Footer from './Footer'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 axios.defaults.withCredentials = true
@@ -8,6 +8,7 @@ axios.defaults.withCredentials = true
 function FoodEdit() {
   const [food, setFood] = useState({})
   const params = useParams()
+  const navigate = useNavigate()
 
   const getFood = async () => {
     try {
@@ -25,7 +26,7 @@ function FoodEdit() {
       const form = new FormData(e.target)
       const formObject = Object.fromEntries(form.entries())
       await axios.patch(`http://localhost:4000/food/${params.id}`, formObject)
-      //add navigation
+      navigate('/listings')
     } catch (err) {
       console.error(err.message)
     }
