@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
 import axios from 'axios'
+axios.defaults.withCredentials = true
 
 function Profile() {
   const [user, setUser] = useState({})
