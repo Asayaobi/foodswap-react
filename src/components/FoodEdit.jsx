@@ -3,6 +3,7 @@ import Footer from './Footer'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+axios.defaults.withCredentials = true
 
 function FoodEdit() {
   const [food, setFood] = useState({})
@@ -13,6 +14,18 @@ function FoodEdit() {
       let { data } = await axios.get(`http://localhost:4000/food/${params.id}`)
       console.log('response from get edit', data)
       if (!data.error) setFood(data)
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  const patchFood = async (e) => {
+    try {
+      e.preventDefault()
+      const form = new FormData(e.target)
+      const formObject = Object.fromEntries(form.entries())
+      await axios.patch(`http://localhost:4000/food/${params.id}`, formObject)
+      //add navigation
     } catch (err) {
       console.error(err.message)
     }
@@ -31,7 +44,7 @@ function FoodEdit() {
             <h1 className="text-2xl font-bold mb-8 font-serif">
               Edit this Dish
             </h1>
-            <form>
+            <form onSubmit={patchFood}>
               <div className="grid grid-cols-3 gap-8">
                 <div>
                   <div className="mb-4">
@@ -64,7 +77,7 @@ function FoodEdit() {
                   <div className="mb-4">
                     <label>Availability</label>
                     <select
-                      name="availability"
+                      name="available"
                       className="border rounded w-full py-2 px-3"
                     >
                       <option value="">Choose availability</option>
