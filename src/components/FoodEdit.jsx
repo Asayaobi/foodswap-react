@@ -23,8 +23,16 @@ function FoodEdit() {
   const patchFood = async (e) => {
     try {
       e.preventDefault()
-      const form = new FormData(e.target)
-      const formObject = Object.fromEntries(form.entries())
+      const formObject = {
+        food_title: e.target.food_title.value,
+        country: e.target.country.value,
+        category: e.target.category.value,
+        ingredients: e.target.ingredients.value,
+        description: e.target.description.value,
+        available: e.target.available.value,
+        images: new FormData(e.target).getAll('image')
+      }
+      console.log('patch form object', formObject)
       await axios.patch(`http://localhost:4000/food/${params.id}`, formObject)
       navigate('/listings')
     } catch (err) {
@@ -112,6 +120,7 @@ function FoodEdit() {
                       <input
                         key={index}
                         type="text"
+                        name="image"
                         className="border rounded py-2 px-3 w-full mb-2"
                         placeholder={image}
                       />
