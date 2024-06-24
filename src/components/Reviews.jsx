@@ -3,17 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+axios.defaults.withCredentials = true
 
 function Reviews() {
   const { id } = useParams()
   const [reviews, setReviews] = useState([])
+  const postReview = async (e) => {
+    try {
+      e.preventDefault()
+      let form = new FormData(e.target)
+      let formObject = Object.fromEntries(form.entries())
+      console.log(formObject)
+      await axios.post('http://localhost:4000/reviews', formObject)
+      window.location.reload()
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
   //handle star rating
   const [selectedRating, setSelectedRating] = useState(0)
   const getReviews = async () => {
     let { data } = await axios.get(
       `http://localhost:4000/reviews?food_id=${id}`
     )
-    console.log(data)
     setReviews(data)
   }
   useEffect(() => {
@@ -59,7 +71,7 @@ function Reviews() {
         </div>
         <hr />
         {/* form */}
-        <form>
+        <form onSubmit={postReview}>
           <div className=" my-10 space-y-4">
             <div className="text-2xl font-serif font-bold">Leave a comment</div>
             <div className=" gap-3 space-x-2">
