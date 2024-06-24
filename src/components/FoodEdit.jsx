@@ -68,12 +68,16 @@ function FoodEdit() {
                   </div>
                   <div className="mb-4">
                     <label>Course Category</label>
-                    <input
-                      type="text"
+                    <select
                       name="category"
                       className="border rounded w-full py-2 px-3"
-                      placeholder={food.category}
-                    />
+                    >
+                      <option value="">Course Category</option>
+                      <option value="breakfast">Breakfast</option>
+                      <option value="appetizer">Appetizer</option>
+                      <option value="main dish">Main Dish</option>
+                      <option value="dessert">Dessert</option>
+                    </select>
                   </div>
                   <div className="mb-4">
                     <label>Availability</label>
