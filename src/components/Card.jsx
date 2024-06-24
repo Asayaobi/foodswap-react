@@ -46,9 +46,9 @@ function Card(props) {
               <>
                 <div className="text-slate-500">Availibility</div>
                 {foodlist.available ? (
-                  <div className=" text-green-900"> Ready to swap </div>
+                  <div className=" text-green-600"> Ready to swap </div>
                 ) : (
-                  <div className=" text-slate-500"> Not today </div>
+                  <div className=" text-red-700"> Not today </div>
                 )}
               </>
             ) : (
