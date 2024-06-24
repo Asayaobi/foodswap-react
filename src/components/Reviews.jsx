@@ -91,7 +91,7 @@ function Reviews() {
             <textarea
               rows="5"
               name="review_text"
-              className=" w-full text-sm  bg-slate-100"
+              className=" w-full text-sm  bg-slate-100 p-2"
             ></textarea>
 
             <button className=" bg-slate-800 text-white py-1 px-4 tracking-widest rounded-sm">
