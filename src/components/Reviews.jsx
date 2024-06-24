@@ -16,6 +16,7 @@ function Reviews({ foodId }) {
       formObject.food_id = foodId
       console.log(formObject)
       await axios.post('http://localhost:4000/reviews/', formObject)
+      window.location.reload()
     } catch (err) {
       console.error(err.message)
     }
