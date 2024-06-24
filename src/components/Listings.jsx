@@ -92,10 +92,10 @@ function Listings() {
                       className="border rounded w-full py-2 px-3"
                     >
                       <option value="">Course Category</option>
-                      <option value="breakfasr">breakfast</option>
-                      <option value="appetizer">appetizer</option>
-                      <option value="main dish">main dish</option>
-                      <option value="dessert">dessert</option>
+                      <option value="breakfast">Breakfast</option>
+                      <option value="appetizer">Appetizer</option>
+                      <option value="main dish">Main Dish</option>
+                      <option value="dessert">Dessert</option>
                     </select>
                   </div>
                   <div className="mb-4">
