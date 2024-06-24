@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 axios.defaults.withCredentials = true
 
-function Reviews({ foodId }) {
+function Reviews() {
   const { id } = useParams()
   const [reviews, setReviews] = useState([])
   const postReview = async (e) => {
@@ -13,7 +13,7 @@ function Reviews({ foodId }) {
       e.preventDefault()
       let form = new FormData(e.target)
       let formObject = Object.fromEntries(form.entries())
-      formObject.food_id = foodId
+      formObject.food_id = id
       console.log(formObject)
       await axios.post('http://localhost:4000/reviews/', formObject)
       window.location.reload()

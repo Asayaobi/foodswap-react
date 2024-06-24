@@ -98,7 +98,7 @@ function Food() {
           </div>
         </div>
       </div>
-      <Reviews foodId={food.food_id} />
+      <Reviews />
       <Footer />
     </div>
   )
