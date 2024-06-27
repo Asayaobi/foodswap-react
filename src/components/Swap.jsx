@@ -5,6 +5,7 @@ axios.defaults.withCredentials = true
 
 function Swap({ foodId }) {
   const [swap, setSwap] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const navigate = useNavigate()
   console.log('foodId', foodId)
   const formObject = {
@@ -13,14 +14,26 @@ function Swap({ foodId }) {
   const submitForm = async (e) => {
     try {
       e.preventDefault()
-      await axios.post('http://localhost:4000/bookings', formObject)
-      setSwap(true)
-      //redirect to bookings after 1.5 seconds
-      setTimeout(() => {
-        navigate('/bookings')
-      }, 1500)
+      const { data } = await axios.post(
+        'http://localhost:4000/bookings',
+        formObject
+      )
+      if (data.error) {
+        setErrorMessage(data.error)
+      } else {
+        setSwap(true)
+        //redirect to bookings after 1.5 seconds
+        setTimeout(() => {
+          navigate('/bookings')
+        }, 1500)
+      }
     } catch (error) {
       console.error(error)
+      if (error.response && error.response.data) {
+        setErrorMessage(error.response.data.error)
+      } else {
+        setErrorMessage('An unexpected error occurred. Please try again.')
+      }
     }
   }
   return (
