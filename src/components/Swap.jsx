@@ -49,6 +49,12 @@ function Swap({ foodId }) {
           </div>
         )}
       </form>
+      {/* error message */}
+      {errorMessage && (
+        <div className="flex justify-start text-sm text-red-500 mt-2">
+          {errorMessage}
+        </div>
+      )}
     </div>
   )
 }
