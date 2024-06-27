@@ -26,10 +26,12 @@ function Listings() {
         'http://localhost:4000/food',
         formObject
       )
-      createFood(data)
       console.log('response data', data)
       if (data.error) {
         setErrorMessage(data.error)
+      } else {
+        createFood(data)
+        window.location.reload()
       }
     } catch (error) {
       console.error(error)
