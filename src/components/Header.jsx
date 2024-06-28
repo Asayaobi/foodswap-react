@@ -1,4 +1,9 @@
-import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faBowlRice,
+  faMobileScreenButton
+} from '@fortawesome/free-solid-svg-icons'
+import { faSlideshare } from '@fortawesome/free-brands-svg-icons'
 
 function Header() {
   const isLoggedIn = localStorage.getItem('isLoggedIn')
@@ -36,7 +41,7 @@ function Header() {
                 food / swap
               </div>
             </div>
-            <div className="text-center space-y-8">
+            <div className="text-center space-y-8 px-40">
               <div>
                 Welcome to our vibrant community of culinary enthusiasts at Food
                 swap. Our website is a delightful hub where home cooks gather to
@@ -52,10 +57,38 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className="flex">
-            <div className="w-full bg-slate-500">1</div>
-            <div className="w-full bg-slate-400">2</div>
-            <div className="w-full bg-slate-200">3</div>
+          {/* bar with logos */}
+          <div className="flex justify-items-center justify-around">
+            <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+              <FontAwesomeIcon
+                icon={faMobileScreenButton}
+                className="text-white text-5xl"
+              />
+            </div>
+            <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+              <FontAwesomeIcon
+                icon={faBowlRice}
+                className="text-white text-5xl"
+              />
+            </div>
+            <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+              <FontAwesomeIcon
+                icon={faSlideshare}
+                className="text-white text-5xl"
+              />
+            </div>
+          </div>
+          {/* columns */}
+          <div className="flex h-72">
+            <div className="w-full bg-slate-800 text-white tracking-widest text-xl text-center place-content-center">
+              SIGN UP FOR FREE
+            </div>
+            <div className="w-full bg-slate-700 text-white tracking-widest text-xl text-center place-content-center">
+              POST YOUR HOMECOOKED DISH
+            </div>
+            <div className="w-full bg-slate-600 text-white tracking-widest text-xl text-center place-content-center">
+              SWAP WITH OTHERS
+            </div>
           </div>
         </>
       )}
