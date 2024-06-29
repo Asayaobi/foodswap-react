@@ -31,9 +31,15 @@ function Header() {
       {/* Welcome Message */}
       {!isLoggedIn && (
         <>
-          <div className="grid place-items-center p-20 space-y-8">
-            <div className=" space-y-2">
-              <div className=" text-7xl font-serif text-orange-400">
+          <div
+            className="relative grid place-items-center p-20 space-y-8"
+            style={{
+              backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
+            }}
+          >
+            <div className="absolute inset-0 bg-white opacity-80 space-y-2"></div>
+            <div className="relative space-y-2">
+              <div className="text-7xl font-serif text-orange-400">
                 Welcome!
               </div>
               <div className=" text-3xl font-serif inline">to </div>
@@ -41,7 +47,7 @@ function Header() {
                 food / swap
               </div>
             </div>
-            <div className="text-center space-y-8 px-40">
+            <div className="relative text-center space-y-8 pb-20 px-40">
               <div>
                 Welcome to our vibrant community of culinary enthusiasts at Food
                 swap. Our website is a delightful hub where home cooks gather to
@@ -80,10 +86,10 @@ function Header() {
               </div>
             </div>
             {/* columns */}
-            <div className="flex h-72">
+            <div className="flex h-72 pt-20 -mt-20">
               {/* sign up */}
               <div
-                className="relative w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                className="relative w-full text-white tracking-widest text-xl text-center place-content-center"
                 style={{
                   backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port10.jpg)`,
                   backgroundSize: 'cover',
@@ -95,7 +101,7 @@ function Header() {
               </div>
               {/* post */}
               <div
-                className="relative w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                className="relative w-full text-white tracking-widest text-xl text-center place-content-center"
                 style={{
                   backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port9.jpg)`,
                   backgroundSize: 'cover',
@@ -107,7 +113,7 @@ function Header() {
               </div>
               {/* swap */}
               <div
-                className="relative w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                className="relative w-full text-white tracking-widest text-xl text-center place-content-center"
                 style={{
                   backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port3.jpg)`,
                   backgroundSize: 'cover',
