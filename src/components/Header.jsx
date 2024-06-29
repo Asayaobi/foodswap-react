@@ -81,13 +81,28 @@ function Header() {
             </div>
             {/* columns */}
             <div className="flex h-72">
-              <div className="w-full bg-slate-800 text-white tracking-widest text-xl text-center place-content-center mt-20">
+              <div
+                className="w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                style={{
+                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port10.jpg)`
+                }}
+              >
                 SIGN UP FOR FREE
               </div>
-              <div className="w-full bg-slate-700 text-white tracking-widest text-xl text-center place-content-center mt-20">
+              <div
+                className="w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                style={{
+                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port9.jpg)`
+                }}
+              >
                 POST YOUR HOMECOOKED DISH
               </div>
-              <div className="w-full bg-slate-600 text-white tracking-widest text-xl text-center place-content-center mt-20">
+              <div
+                className="w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                style={{
+                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port3.jpg)`
+                }}
+              >
                 SWAP WITH OTHERS
               </div>
             </div>
