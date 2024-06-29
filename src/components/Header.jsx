@@ -81,29 +81,41 @@ function Header() {
             </div>
             {/* columns */}
             <div className="flex h-72">
+              {/* sign up */}
               <div
-                className="w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                className="relative w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
                 style={{
-                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port10.jpg)`
+                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port10.jpg)`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat'
                 }}
               >
-                SIGN UP FOR FREE
+                <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
+                <div className="relative">SIGN UP FOR FREE</div>
               </div>
+              {/* post */}
               <div
-                className="w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                className="relative w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
                 style={{
-                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port9.jpg)`
+                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port9.jpg)`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat'
                 }}
               >
-                POST YOUR HOMECOOKED DISH
+                <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
+                <div className="relative">POST YOUR HOMECOOKED DISH</div>
               </div>
+              {/* swap */}
               <div
-                className="w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
+                className="relative w-full text-white tracking-widest text-xl text-center place-content-center mt-20"
                 style={{
-                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port3.jpg)`
+                  backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port3.jpg)`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat'
                 }}
               >
-                SWAP WITH OTHERS
+                <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
+                <div className="relative">SWAP WITH OTHERS</div>
               </div>
             </div>
           </div>
