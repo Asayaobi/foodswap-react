@@ -57,37 +57,39 @@ function Header() {
               </div>
             </div>
           </div>
-          {/* bar with logos */}
-          <div className="flex justify-items-center justify-around">
-            <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
-              <FontAwesomeIcon
-                icon={faMobileScreenButton}
-                className="text-white text-5xl"
-              />
+          <div className="relative">
+            {/* bar with logos */}
+            <div className="absolute inset-0 z-10 flex justify-items-center justify-around">
+              <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+                <FontAwesomeIcon
+                  icon={faMobileScreenButton}
+                  className="text-white text-5xl"
+                />
+              </div>
+              <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+                <FontAwesomeIcon
+                  icon={faBowlRice}
+                  className="text-white text-5xl"
+                />
+              </div>
+              <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+                <FontAwesomeIcon
+                  icon={faSlideshare}
+                  className="text-white text-5xl"
+                />
+              </div>
             </div>
-            <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
-              <FontAwesomeIcon
-                icon={faBowlRice}
-                className="text-white text-5xl"
-              />
-            </div>
-            <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
-              <FontAwesomeIcon
-                icon={faSlideshare}
-                className="text-white text-5xl"
-              />
-            </div>
-          </div>
-          {/* columns */}
-          <div className="flex h-72">
-            <div className="w-full bg-slate-800 text-white tracking-widest text-xl text-center place-content-center">
-              SIGN UP FOR FREE
-            </div>
-            <div className="w-full bg-slate-700 text-white tracking-widest text-xl text-center place-content-center">
-              POST YOUR HOMECOOKED DISH
-            </div>
-            <div className="w-full bg-slate-600 text-white tracking-widest text-xl text-center place-content-center">
-              SWAP WITH OTHERS
+            {/* columns */}
+            <div className="flex h-72">
+              <div className="w-full bg-slate-800 text-white tracking-widest text-xl text-center place-content-center mt-20">
+                SIGN UP FOR FREE
+              </div>
+              <div className="w-full bg-slate-700 text-white tracking-widest text-xl text-center place-content-center mt-20">
+                POST YOUR HOMECOOKED DISH
+              </div>
+              <div className="w-full bg-slate-600 text-white tracking-widest text-xl text-center place-content-center mt-20">
+                SWAP WITH OTHERS
+              </div>
             </div>
           </div>
         </>
