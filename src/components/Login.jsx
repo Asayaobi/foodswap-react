@@ -50,9 +50,9 @@ function LogIn() {
         <div className=" bg-white px-48 py-40 pt-14">
           <Link to="/">
             <img
-              src="https://i.postimg.cc/L6W3VbhW/foodswapblacklogotriangle-002.png"
+              src="https://i.postimg.cc/QNybcRwy/cleaned-inline-orange-logo-with-black-text.png"
               alt="foodswap logo"
-              className="pl-5 h-40"
+              className="h-40"
             />
           </Link>
           {/* Log In Form */}
