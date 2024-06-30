@@ -20,7 +20,7 @@ function FoodList() {
   }, [])
 
   return (
-    <div className="container mx-auto">
+    <>
       <Header />
       <Nav />
       <Filter setFoodList={setFoodList} />
@@ -34,15 +34,8 @@ function FoodList() {
                 .map((food, index) => <Card key={index} food={food} />)}
         </div>
       </div>
-      <div>
-        <img
-          src="https://i.postimg.cc/05LxCwqq/deliveryapp.jpg"
-          alt="delivery logo"
-          className=" h-194 w-full"
-        />
-      </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
