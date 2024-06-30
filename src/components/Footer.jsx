@@ -17,7 +17,7 @@ function Footer() {
       >
         <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
         {/* Delivery Text box */}
-        <div>
+        <div className="gap-2">
           <div className="relative text-white text-3xl font-serif tracking-wide">
             Fast, Fresh, and Fabulous - That's Our Promise!
           </div>
@@ -30,7 +30,7 @@ function Footer() {
               1122
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-4">
             <button className="relative py-2 px-5 font-serif text-white text-xl border border-white hover:border-orange-400">
               <Link to="/login">Order Now</Link>
             </button>
@@ -42,7 +42,7 @@ function Footer() {
             © 2024 FOOD SWAP PROJECT BY
           </div>
           <Link to="https://portfolio-asaya.onrender.com">
-            <div className="relative text-slate-50">ASAYAOBI</div>
+            <div className="relative text-slate-50 px-2">ASAYAOBI</div>
           </Link>
           <div className="relative text-slate-300"> ▲ ALL RIGHTS RESERVED</div>
         </div>
