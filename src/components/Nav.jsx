@@ -19,9 +19,9 @@ function Nav() {
       <div className="absolute inset-0 grid grid-cols-2 gap-10 justify-between content-start mr-20 ml-14">
         <Link to="/">
           <img
-            src="https://i.postimg.cc/MphWSVpT/whitetrianglelogo-001.png"
+            src="https://i.postimg.cc/PqG9KGwy/transparent-logo-no-text.png"
             alt="foodswap logo"
-            className="pl-5 h-40"
+            className="pl-5 pt-10 h-28"
           />
         </Link>
 
