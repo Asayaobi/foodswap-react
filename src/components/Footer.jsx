@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
 function Footer() {
   const isLoggedIn = localStorage.getItem('isLoggedIn')
   console.log(isLoggedIn)
@@ -17,8 +18,22 @@ function Footer() {
         <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
         {/* Delivery Text box */}
         <div>
-          <div className="relative text-white text-lg">
+          <div className="relative text-white text-3xl font-serif tracking-wide">
             Fast, Fresh, and Fabulous - That's Our Promise!
+          </div>
+          <div className="flex text-center gap-2 items-center justify-center">
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="relative text-white text-lg pt-2"
+            />
+            <div className="relative text-center text-white text-3xl font-serif tracking-wide">
+              1122
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <button className="relative py-2 px-5 font-serif text-white text-xl border border-white hover:border-orange-400">
+              <Link to="/login">Order Now</Link>
+            </button>
           </div>
         </div>
         {/* Footer Text */}
