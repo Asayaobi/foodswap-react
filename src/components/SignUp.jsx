@@ -72,8 +72,8 @@ function SignUp() {
           className=" w-full"
         />
       </div>
-      <div className="flex justify-center items-center bg-slate-200 w-1/2">
-        <div className=" bg-white px-10 py-10 pt-8">
+      <div className="flex justify-center items-center w-1/2">
+        <div className="border rounded-md px-10 pb-10 pt-8">
           <div className="flex justify-center">
             <Link to="/">
               <img
@@ -148,14 +148,16 @@ function SignUp() {
               className="border w-full p-1 rounded mb-8"
               autoFocus
             />
-            <button className=" bg-orange-500 hover:bg-orange-300 w-full text-white mt-2 py-3 rounded-md">
+            <button className=" bg-amber-500 hover:bg-orange-500 w-full text-white mt-2 py-3 rounded-md">
               Register
             </button>
           </form>
           <div className="flex mt-7 justify-center text-sm gap-3">
             <div className="">Already have an account ?</div>
             <Link to="/LogIn">
-              <div className="text-orange-600">Log In here</div>
+              <div className="text-amber-600 hover:text-orange-700">
+                Log In here
+              </div>
             </Link>
           </div>
           {errorMessage && (
