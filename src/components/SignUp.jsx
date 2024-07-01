@@ -72,8 +72,13 @@ function SignUp() {
           className=" w-full"
         />
       </div>
-      <div className="flex justify-center items-center bg-slate-200 w-1/2">
-        <div className=" bg-white px-10 py-10 pt-8">
+      <div
+        className="relative flex justify-center items-center w-1/2"
+        style={{
+          backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
+        }}
+      >
+        <div className="absolute bg-white opacity-90 space-y-2 border rounded pb-10 pt-8 m-24">
           <div className="flex justify-center">
             <Link to="/">
               <img
@@ -84,7 +89,7 @@ function SignUp() {
             </Link>
           </div>
           {/* Sign Up Form */}
-          <form onSubmit={(e) => submitForm(e)}>
+          <form onSubmit={(e) => submitForm(e)} className="px-44">
             <div className="py-3">Name</div>
             <div className=" grid grid-cols-3 gap-3">
               <input
@@ -148,14 +153,16 @@ function SignUp() {
               className="border w-full p-1 rounded mb-8"
               autoFocus
             />
-            <button className=" bg-orange-500 hover:bg-orange-300 w-full text-white mt-2 py-3 rounded-md">
+            <button className=" bg-amber-500 hover:bg-orange-500 w-full text-white mt-2 py-3 rounded-md">
               Register
             </button>
           </form>
           <div className="flex mt-7 justify-center text-sm gap-3">
             <div className="">Already have an account ?</div>
             <Link to="/LogIn">
-              <div className="text-orange-600">Log In here</div>
+              <div className="text-amber-600 hover:text-orange-700">
+                Log In here
+              </div>
             </Link>
           </div>
           {errorMessage && (

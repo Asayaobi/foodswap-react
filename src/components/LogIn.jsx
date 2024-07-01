@@ -39,6 +39,7 @@ function LogIn() {
   }
   return (
     <div className="flex">
+      {/* Kitchen image */}
       <div className=" w-1/2">
         <img
           src="https://i.postimg.cc/fR70p2B5/Screenshot-2567-06-02-at-19-32-35.png"
@@ -46,8 +47,14 @@ function LogIn() {
           className=" w-full"
         />
       </div>
-      <div className="flex justify-center items-center bg-slate-200 w-1/2">
-        <div className=" bg-white px-48 py-40 pt-14">
+      {/* Login Elements */}
+      <div
+        className="relative flex justify-center items-center bg-slate-200 w-1/2"
+        style={{
+          backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
+        }}
+      >
+        <div className="absolute bg-white opacity-90 border rounded m-24 px-20 py-20 pt-14">
           <Link to="/">
             <img
               src="https://i.postimg.cc/QNybcRwy/cleaned-inline-orange-logo-with-black-text.png"
@@ -75,14 +82,16 @@ function LogIn() {
               className="border w-full p-1 rounded mb-8"
               autoFocus
             />
-            <button className=" bg-orange-500 hover:bg-orange-300 w-full text-white mt-2 py-3">
+            <button className=" bg-amber-500 hover:bg-orange-500 w-full text-white mt-2 py-3 rounded-md">
               Log In
             </button>
           </form>
           <div className="flex mt-7 justify-center text-sm gap-3">
             <div className="">New to Food Swap ?</div>
             <Link to="/SignUp">
-              <div className="text-orange-600">Create an account here</div>
+              <div className="text-amber-600 hover:text-orange-700">
+                Create an account here
+              </div>
             </Link>
           </div>
           {errorMessage && (
