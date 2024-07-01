@@ -27,7 +27,7 @@ function Nav() {
 
         <div className="gap-4 flex justify-end">
           <Link to="/">
-            <button className="px-8 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+            <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
               Home
             </button>
           </Link>
@@ -59,12 +59,12 @@ function Nav() {
           ) : (
             <>
               <Link to="/login">
-                <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
                   Log In
                 </button>
               </Link>
               <Link to="/signup">
-                <button className="p-2 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
                   Sign Up
                 </button>
               </Link>
