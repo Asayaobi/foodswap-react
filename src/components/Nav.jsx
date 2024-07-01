@@ -28,23 +28,23 @@ function Nav() {
           {isLoggedIn ? (
             <>
               <Link to="/listings">
-                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:bg-slate-700 border border-white">
                   My Dish
                 </button>
               </Link>
               <Link to="/bookings">
-                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:bg-slate-700 border border-white">
                   Food Request
                 </button>
               </Link>
               <Link to="/profile">
-                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:bg-slate-700 border border-white">
                   My Profile
                 </button>
               </Link>
               <button
                 onClick={logout}
-                className="w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white"
+                className="w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:bg-slate-700 border border-white"
               >
                 Log Out
               </button>
@@ -52,17 +52,17 @@ function Nav() {
           ) : (
             <>
               <Link to="/">
-                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:bg-slate-700 border border-white">
                   Home
                 </button>
               </Link>
               <Link to="/login">
-                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:bg-slate-700 border border-white">
                   Log In
                 </button>
               </Link>
               <Link to="/signup">
-                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 hover:border border-white">
+                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10  hover:bg-slate-700 border border-white">
                   Sign Up
                 </button>
               </Link>
