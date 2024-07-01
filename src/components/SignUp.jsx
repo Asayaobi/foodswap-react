@@ -72,8 +72,8 @@ function SignUp() {
           className=" w-full"
         />
       </div>
-      <div className="flex justify-center items-center w-1/2">
-        <div className="border rounded-md px-10 pb-10 pt-8">
+      <div className="flex justify-center items-center w-1/2 bg-gray-50">
+        <div className="border border-white rounded-md px-10 pb-10 pt-8 bg-white">
           <div className="flex justify-center">
             <Link to="/">
               <img
