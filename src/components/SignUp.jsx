@@ -72,8 +72,14 @@ function SignUp() {
           className=" w-full"
         />
       </div>
-      <div className="flex justify-center items-center w-1/2 bg-gray-50">
-        <div className="border border-white rounded-md px-10 pb-10 pt-8 bg-white">
+      <div
+        className="relative flex justify-center items-center w-1/2"
+        style={{
+          backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
+        }}
+      >
+        <div className="absolute bg-white opacity-90 space-y-2 border rounded pb-10 pt-8 m-24">
+          {/* <div className="border border-white rounded pb-10 pt-8 m-24 bg-white"> */}
           <div className="flex justify-center">
             <Link to="/">
               <img
@@ -84,7 +90,7 @@ function SignUp() {
             </Link>
           </div>
           {/* Sign Up Form */}
-          <form onSubmit={(e) => submitForm(e)}>
+          <form onSubmit={(e) => submitForm(e)} className="px-44">
             <div className="py-3">Name</div>
             <div className=" grid grid-cols-3 gap-3">
               <input
