@@ -21,7 +21,7 @@ function Nav() {
           <img
             src="https://i.postimg.cc/PqG9KGwy/transparent-logo-no-text.png"
             alt="foodswap logo"
-            className="pl-5 pt-10 h-28"
+            className="pl-5 pt-10 h-28 hover:animate-pulse"
           />
         </Link>
         <div className="gap-4 flex justify-end">
