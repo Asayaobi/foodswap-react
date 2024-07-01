@@ -21,8 +21,7 @@ function Header() {
         {/* header for front page */}
         <div className=" absolute inset-0 flex items-center justify-center">
           <img
-            src="https://i.postimg.cc/tCCKNF0c/circle.png"
-            // or https://i.postimg.cc/tCCKNF0c/circle.png https://i.postimg.cc/bYChMmRP/triangle.png https://i.postimg.cc/6p44gY1P/final-foodswap-001.png https://i.postimg.cc/ZnqCccdV/final-option2-001.png
+            src="https://i.postimg.cc/YCX959b8/foodsw-ap-transparent-001.png"
             alt="logo"
             className=" h-96"
           />
