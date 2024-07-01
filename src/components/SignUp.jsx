@@ -79,7 +79,6 @@ function SignUp() {
         }}
       >
         <div className="absolute bg-white opacity-90 space-y-2 border rounded pb-10 pt-8 m-24">
-          {/* <div className="border border-white rounded pb-10 pt-8 m-24 bg-white"> */}
           <div className="flex justify-center">
             <Link to="/">
               <img
