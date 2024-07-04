@@ -58,7 +58,7 @@ function Reviews() {
           <div className="text-xl font-serif font-bold mr-3">RATING</div>
           <div>
             {reviews.length > 0 ? (
-              [...Array(averageRating)].map((faStar, index) => (
+              [...Array(averageRating)].map((_, index) => (
                 <FontAwesomeIcon
                   key={index}
                   icon={faStar}
