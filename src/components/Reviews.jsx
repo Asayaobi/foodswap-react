@@ -121,36 +121,38 @@ function Reviews() {
 
 function Review({ review }) {
   return (
-    <div>
-      <div className="flex gap-5">
-        <div>
-          <img
-            src={review.author.profile_image}
-            alt="reviewer pic"
-            className="rounded-full w-2/3"
-          />
-        </div>
-        <div className=" space-y-4">
-          <div className="flex pt-3 gap-2 text-xl font-bold">
-            <div>{review.author.firstname}</div>
-            <div>{review.author.lastname}</div>
+    <>
+      <div>
+        <div className="flex gap-5">
+          <div>
+            <img
+              src={review.author.profile_image}
+              alt="reviewer pic"
+              className="rounded-full w-2/3"
+            />
           </div>
-          <div className=" text-slate-400 text-sm">{review.review_date}</div>
-          <div className=" space-y-4">
-            {[1, 2, 3, 4, 5].map((star) =>
-              star <= review.rating ? (
-                <FontAwesomeIcon
-                  key={star}
-                  icon={faStar}
-                  className="text-slate-500"
-                />
-              ) : null
-            )}
-            <div className=" pb-8">{review.review_text}</div>
+          <div>
+            <div className="flex gap-2 text-xl font-bold">
+              <div>{review.author.firstname}</div>
+              <div>{review.author.lastname}</div>
+            </div>
+            <div className=" text-slate-400 text-sm">{review.review_date}</div>
+            <div>
+              {[1, 2, 3, 4, 5].map((star) =>
+                star <= review.rating ? (
+                  <FontAwesomeIcon
+                    key={star}
+                    icon={faStar}
+                    className="text-slate-500"
+                  />
+                ) : null
+              )}
+              <div className=" pb-8">{review.review_text}</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
