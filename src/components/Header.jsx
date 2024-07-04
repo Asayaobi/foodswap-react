@@ -96,7 +96,7 @@ function Header() {
                 }}
               >
                 <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
-                <div className="relative">SIGN UP FOR FREE</div>
+                <div className="relative">1. SIGN UP FOR FREE</div>
               </div>
               {/* post */}
               <div
@@ -108,7 +108,7 @@ function Header() {
                 }}
               >
                 <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
-                <div className="relative">POST YOUR HOMECOOKED DISH</div>
+                <div className="relative">2. POST YOUR HOMECOOKED DISH</div>
               </div>
               {/* swap */}
               <div
@@ -120,7 +120,7 @@ function Header() {
                 }}
               >
                 <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
-                <div className="relative">SWAP WITH OTHERS</div>
+                <div className="relative">3. SWAP WITH OTHERS</div>
               </div>
             </div>
           </div>

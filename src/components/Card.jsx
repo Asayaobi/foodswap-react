@@ -70,7 +70,7 @@ function Card(props) {
           {!isListing && !isBooking && !isRequested ? (
             <Link to={`/food/${foodlist.food_id}/`}>
               <button className=" bg-orange-400 hover:bg-yellow-500 w-full text-white mt-2 pb-4 rounded-b-md">
-                READY TO SWAP
+                AVAILABLE FOR SWAP
               </button>
             </Link>
           ) : null}
