@@ -19,9 +19,9 @@ function Nav() {
       <div className="absolute inset-0 grid grid-cols-2 gap-10 justify-between content-start mr-20 ml-14">
         <Link to="/">
           <img
-            src="https://i.postimg.cc/PqG9KGwy/transparent-logo-no-text.png"
+            src="https://i.postimg.cc/QNw0m4dK/foodsw-ap-inline.png"
             alt="foodswap logo"
-            className="pl-5 pt-10 h-28 hover:animate-pulse"
+            className="pt-5 h-36 hover:animate-pulse"
           />
         </Link>
         <div className="gap-4 flex justify-end">
