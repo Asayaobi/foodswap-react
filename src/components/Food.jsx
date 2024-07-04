@@ -62,39 +62,46 @@ function Food() {
             </div>
           </div>
           {/* Text */}
-          <div className="items-center ml-7">
+          <div className="items-center ml-10">
             <div className="gap-4">
               <div className=" text-4xl font-serif font-extrabold">
                 {food.food_title}
               </div>
-              <div className=" text-2xl font-serif font-extrabold text-slate-500">
+              <div className="text-xl font-serif font-extrabold text-slate-500">
                 {food.country}
               </div>
-              <div className=" pb-3">{food.description}</div>
+              <div className="pb-3">{food.description}</div>
               <hr />
             </div>
-            <div className="gap-4">
-              <div className=" text-2xl font-serif font-extrabold">RATING</div>
-              <div>
-                {[...Array(food.rating)].map((star, index) => (
-                  <FontAwesomeIcon
-                    key={index}
-                    icon={faStar}
-                    className=" text-slate-500"
-                  />
-                ))}
+            <div className="my-2">
+              <div className="flex gap-5">
+                <div className="text-lg font-serif font-extrabold">RATING</div>
+                <div>
+                  {[...Array(food.rating)].map((star, index) => (
+                    <FontAwesomeIcon
+                      key={index}
+                      icon={faStar}
+                      className=" text-slate-500 pt-1"
+                    />
+                  ))}
+                </div>
               </div>
-              <div className=" text-2xl font-serif font-extrabold">
+              <div className="flex gap-5">
+                <div className="text-lg font-serif font-extrabold">
+                  CATEGORIES
+                </div>
+                <div>{food.category}</div>
+              </div>
+
+              <div className="text-lg font-serif font-extrabold">
                 INGREDIENTS
               </div>
-              <div>{food.ingredients}</div>
-              <div className=" text-2xl font-serif font-extrabold">
-                CATEGORIES
-              </div>
-              <div className="pb-3">{food.category}</div>
+              <div className="pt-1">{food.ingredients}</div>
               <hr />
             </div>
-            <Swap foodId={food.food_id} />
+            <div className="py-3">
+              <Swap foodId={food.food_id} />
+            </div>
           </div>
         </div>
       </div>
