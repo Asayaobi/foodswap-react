@@ -26,7 +26,7 @@ function Food() {
     }
   }, [food])
   return (
-    <div className="container mx-auto">
+    <div>
       <div
         className="h-40 bg-center"
         style={{
