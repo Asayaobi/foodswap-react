@@ -115,10 +115,16 @@ function Reviews() {
               name="review_text"
               className=" w-full text-sm  bg-slate-100 p-2"
             ></textarea>
-
-            <button className=" bg-slate-800 text-white py-1 px-4 tracking-widest rounded-sm">
-              POST COMMENT
-            </button>
+            <div className="flex gap-5">
+              <button className=" bg-slate-800 text-white py-1 px-4 tracking-widest rounded-sm">
+                POST COMMENT
+              </button>
+              {errorMessage && (
+                <div className="place-content-center text-center text-red-500 text-sm">
+                  {errorMessage}
+                </div>
+              )}
+            </div>
           </div>
         </form>
         {/* review list */}
