@@ -8,6 +8,8 @@ axios.defaults.withCredentials = true
 function Reviews() {
   const { id } = useParams()
   const [reviews, setReviews] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
+
   const postReview = async (e) => {
     try {
       e.preventDefault()
@@ -15,8 +17,15 @@ function Reviews() {
       let formObject = Object.fromEntries(form.entries())
       formObject.food_id = id
       console.log(formObject)
-      await axios.post('http://localhost:4000/reviews/', formObject)
-      window.location.reload()
+      let { data } = await axios.post(
+        'http://localhost:4000/reviews/',
+        formObject
+      )
+      if (data.error) {
+        setErrorMessage(data.error)
+      } else {
+        window.location.reload()
+      }
     } catch (err) {
       console.error(err.message)
     }
