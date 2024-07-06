@@ -114,6 +114,11 @@ function Filter({ setFoodList }) {
           </button>
         </div>
       </form>
+      {errorMessage && (
+        <div className="text-red-500 text-sm text-right bg-slate-50 px-48">
+          {errorMessage}
+        </div>
+      )}
     </>
   )
 }
