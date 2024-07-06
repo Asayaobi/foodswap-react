@@ -1,10 +1,11 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 function Filter({ setFoodList }) {
   const [cities, setCities] = useState([])
   const [countries, setCountries] = useState([])
   const [categories, setCategories] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
+  const formRef = useRef(null) // Reference to the form element
 
   const getCities = async () => {
     let { data } = await axios.get(`http://localhost:4000/city`)
@@ -43,6 +44,7 @@ function Filter({ setFoodList }) {
         setErrorMessage(data.error)
       } else {
         setFoodList(data)
+        formRef.current.reset() // Reset the form fields after successful submission
       }
     } catch (error) {
       console.error(error)
@@ -60,7 +62,7 @@ function Filter({ setFoodList }) {
   }, [])
   return (
     <>
-      <form onSubmit={submitForm}>
+      <form ref={formRef} onSubmit={submitForm}>
         <div className="bg-slate-50 flex justify-center gap-4 px-48 pt-10">
           {/* city */}
           <select
