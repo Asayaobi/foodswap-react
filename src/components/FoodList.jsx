@@ -9,18 +9,12 @@ import { useState, useEffect } from 'react'
 function FoodList() {
   const [foodlist, setFoodList] = useState([])
   const isLoggedIn = localStorage.getItem('isLoggedIn')
-  const [errorMessage, setErrorMessage] = useState('')
 
   const getFood = async () => {
     try {
       let { data } = await axios.get('http://localhost:4000/food')
-      if (data.error) {
-        setErrorMessage(data.error)
-      } else {
-        setFoodList(data)
-      }
+      setFoodList(data)
     } catch (err) {
-      setErrorMessage(err.message)
       console.error(err.message)
     }
   }
