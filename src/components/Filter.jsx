@@ -4,6 +4,8 @@ function Filter({ setFoodList }) {
   const [cities, setCities] = useState([])
   const [countries, setCountries] = useState([])
   const [categories, setCategories] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
+
   const getCities = async () => {
     let { data } = await axios.get(`http://localhost:4000/city`)
     setCities(data)
@@ -37,7 +39,11 @@ function Filter({ setFoodList }) {
       }
       let url = `http://localhost:4000/food?${queryArray.join('&')}`
       const { data } = await axios.get(url)
-      setFoodList(data)
+      if (data.error) {
+        setErrorMessage(data.error)
+      } else {
+        setFoodList(data)
+      }
     } catch (error) {
       console.error(error)
     }
