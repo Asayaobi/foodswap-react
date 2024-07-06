@@ -45,6 +45,7 @@ function Filter({ setFoodList }) {
       } else {
         setFoodList(data)
         formRef.current.reset() // Reset the form fields after successful submission
+        setErrorMessage('') // Reset the error message after successful submission
       }
     } catch (error) {
       console.error(error)
