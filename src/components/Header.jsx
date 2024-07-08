@@ -48,7 +48,7 @@ function Header() {
                 food / swap
               </div>
             </div>
-            <div className="relative text-center space-y-3 lg:space-y-8 pb-20 px-5 md:px-10 lg:px-40">
+            <div className="relative text-center space-y-8 pb-20 px-5 md:px-10 lg:px-40">
               <div>
                 Welcome to our vibrant community of culinary enthusiasts at Food
                 swap. Our website is a delightful hub where home cooks gather to
@@ -67,22 +67,22 @@ function Header() {
           <div className="relative">
             {/* bar with logos */}
             <div className="absolute inset-0 z-10 flex justify-items-center justify-around">
-              <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+              <div className="flex items-center justify-center rounded-full h-28 lg:h-40 w-28 lg:w-40 bg-slate-900">
                 <FontAwesomeIcon
                   icon={faMobileScreenButton}
-                  className="text-white text-5xl"
+                  className="text-white text-3xl lg:text-5xl"
                 />
               </div>
-              <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+              <div className="flex items-center justify-center rounded-full h-28 lg:h-40 w-28 lg:w-40 bg-slate-900">
                 <FontAwesomeIcon
                   icon={faBowlRice}
-                  className="text-white text-5xl"
+                  className="text-white text-3xl lg:text-5xl"
                 />
               </div>
-              <div className="flex items-center justify-center rounded-full h-40 w-40 bg-slate-900">
+              <div className="flex items-center justify-center rounded-full h-28 lg:h-40 w-28 lg:w-40 bg-slate-900">
                 <FontAwesomeIcon
                   icon={faSlideshare}
-                  className="text-white text-5xl"
+                  className="text-white text-3xl lg:text-5xl"
                 />
               </div>
             </div>
