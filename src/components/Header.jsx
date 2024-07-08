@@ -11,9 +11,9 @@ function Header() {
   return (
     <>
       {/* booking or intro */}
-      <div className="relative h-96">
+      <div className="relative w-full h-32 md:h-40 lg:h-96 overflow-hidden">
         <div
-          className=" absolute inset-0 bg-cover bg-center"
+          className=" absolute inset-0 bg-cover bg-center w-full object-cover"
           style={{
             backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/shop_bg-compressed.jpg)`
           }}
@@ -23,7 +23,7 @@ function Header() {
           <img
             src="https://i.postimg.cc/YCX959b8/foodsw-ap-transparent-001.png"
             alt="logo"
-            className="h-48"
+            className="h-16 md:h-24 lg:h-48"
           />
         </div>
       </div>
