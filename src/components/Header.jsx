@@ -67,19 +67,19 @@ function Header() {
           <div className="relative">
             {/* bar with logos */}
             <div className="absolute inset-0 z-10 flex justify-items-center justify-around">
-              <div className="flex items-center justify-center rounded-full h-28 lg:h-40 w-28 lg:w-40 bg-slate-900">
+              <div className="flex items-center justify-center rounded-full h-20 md:h-28 lg:h-40 w-20 md:w-28 lg:w-40 bg-slate-900">
                 <FontAwesomeIcon
                   icon={faMobileScreenButton}
                   className="text-white text-3xl lg:text-5xl"
                 />
               </div>
-              <div className="flex items-center justify-center rounded-full h-28 lg:h-40 w-28 lg:w-40 bg-slate-900">
+              <div className="flex items-center justify-center rounded-full h-20 md:h-28 lg:h-40 w-20 md:w-28 lg:w-40 bg-slate-900">
                 <FontAwesomeIcon
                   icon={faBowlRice}
                   className="text-white text-3xl lg:text-5xl"
                 />
               </div>
-              <div className="flex items-center justify-center rounded-full h-28 lg:h-40 w-28 lg:w-40 bg-slate-900">
+              <div className="flex items-center justify-center rounded-full h-20 md:h-28 lg:h-40 w-20 md:w-28 lg:w-40 bg-slate-900">
                 <FontAwesomeIcon
                   icon={faSlideshare}
                   className="text-white text-3xl lg:text-5xl"
@@ -87,10 +87,10 @@ function Header() {
               </div>
             </div>
             {/* columns */}
-            <div className="flex h-72 pt-20 -mt-20">
+            <div className="flex h-52 lg:h-72 pt-14 lg:pt-20 -mt-20">
               {/* sign up */}
               <div
-                className="relative w-full text-white tracking-widest text-xl text-center place-content-center"
+                className="relative w-full place-content-center"
                 style={{
                   backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port10.jpg)`,
                   backgroundSize: 'cover',
@@ -98,11 +98,13 @@ function Header() {
                 }}
               >
                 <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
-                <div className="relative">1. SIGN UP FOR FREE</div>
+                <div className="relative text-xs lg:text-xl text-center text-white lg:tracking-widest">
+                  1. SIGN UP FOR FREE
+                </div>
               </div>
               {/* post */}
               <div
-                className="relative w-full text-white tracking-widest text-xl text-center place-content-center"
+                className="relative w-full place-content-center"
                 style={{
                   backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port9.jpg)`,
                   backgroundSize: 'cover',
@@ -110,11 +112,13 @@ function Header() {
                 }}
               >
                 <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
-                <div className="relative">2. POST YOUR HOMECOOKED DISH</div>
+                <div className="relative text-xs lg:text-xl text-center text-white lg:tracking-widest">
+                  2. POST YOUR HOMECOOKED DISH
+                </div>
               </div>
               {/* swap */}
               <div
-                className="relative w-full text-white tracking-widest text-xl text-center place-content-center"
+                className="relative w-full place-content-center"
                 style={{
                   backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/04/port3.jpg)`,
                   backgroundSize: 'cover',
@@ -122,7 +126,9 @@ function Header() {
                 }}
               >
                 <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
-                <div className="relative">3. SWAP WITH OTHERS</div>
+                <div className="relative text-xs lg:text-xl text-center text-white lg:tracking-widest">
+                  3. SWAP WITH OTHERS
+                </div>
               </div>
             </div>
           </div>
