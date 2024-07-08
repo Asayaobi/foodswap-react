@@ -31,22 +31,24 @@ function Header() {
       {!isLoggedIn && (
         <>
           <div
-            className="relative grid place-items-center p-20 space-y-8"
+            className="relative grid place-items-center p-6 lg:p-20 space-x-3 lg:space-y-8"
             style={{
               backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
             }}
           >
             <div className="absolute inset-0 bg-white opacity-80 space-y-2"></div>
-            <div className="relative space-y-2">
-              <div className="text-7xl font-serif text-orange-400">
+            <div className="relative lg:space-y-2">
+              <div className="relative text-4xl lg:text-7xl font-serif text-orange-400">
                 Welcome!
               </div>
-              <div className=" text-3xl font-serif inline">to </div>
-              <div className="pl-2 font-extrabold text-4xl font-serif inline">
+              <div className="relative text-xl lg:text-3xl font-serif inline">
+                to{' '}
+              </div>
+              <div className="relative lg:pl-2 font-extrabold text-2xl lg:text-4xl font-serif inline">
                 food / swap
               </div>
             </div>
-            <div className="relative text-center space-y-8 pb-20 px-40">
+            <div className="relative text-center space-y-3 lg:space-y-8 pb-20 px-5 md:px-10 lg:px-40">
               <div>
                 Welcome to our vibrant community of culinary enthusiasts at Food
                 swap. Our website is a delightful hub where home cooks gather to
