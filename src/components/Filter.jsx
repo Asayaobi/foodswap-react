@@ -68,7 +68,7 @@ function Filter({ setFoodList }) {
           {/* city */}
           <select
             name="city"
-            className="border border-gray-300 rounded ps-9 w-full p-2"
+            className="border border-gray-300 rounded w-full p-2"
           >
             <option value="">Any Location</option>
             {cities &&
@@ -81,7 +81,7 @@ function Filter({ setFoodList }) {
           {/* country */}
           <select
             name="country"
-            className="border border-gray-300 rounded ps-9 w-full p-2"
+            className="border border-gray-300 rounded w-full p-2"
           >
             <option value="">Cuisine Type</option>
             {countries &&
@@ -94,7 +94,7 @@ function Filter({ setFoodList }) {
           {/* category */}
           <select
             name="category"
-            className="border border-gray-300 rounded ps-9 w-full p-2"
+            className="border border-gray-300 rounded w-full p-2"
           >
             <option value="">Course Category</option>
             {categories &&
@@ -107,7 +107,7 @@ function Filter({ setFoodList }) {
           {/* search */}
           <input
             name="search"
-            className="border border-gray-300 rounded ps-9 w-full p-2"
+            className="border border-gray-300 rounded w-full p-2"
             type="text"
             placeholder="keywords..."
           />
