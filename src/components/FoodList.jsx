@@ -28,7 +28,7 @@ function FoodList() {
       <Header />
       <Nav />
       <Filter setFoodList={setFoodList} />
-      <div className="bg-slate-50 grid justify-stretch pb-28 pt-10 px-80">
+      <div className="bg-slate-50 grid pt-8 pb-8 px-8 lg:pb-28 lg:pt-10 md:px-20 lg:px-80">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Review only 6 cards if the user is not logged in */}
           {isLoggedIn
