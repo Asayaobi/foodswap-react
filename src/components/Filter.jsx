@@ -64,7 +64,7 @@ function Filter({ setFoodList }) {
   return (
     <>
       <form ref={formRef} onSubmit={submitForm}>
-        <div className="relative z-10 bg-slate-50 flex justify-center gap-4 px-48 pt-10">
+        <div className="relative z-10 bg-slate-50 grid grid-cols-1 md:grid-cols-5 justify-center gap-4 px-2 lg:px-48 pt-10">
           {/* city */}
           <select
             name="city"
