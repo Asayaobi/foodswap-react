@@ -24,27 +24,27 @@ function Nav() {
             className="pt-5 h-20 md:h-36 hover:animate-pulse"
           />
         </Link>
-        <div className="gap-4 flex justify-center md:justify-end">
+        <div className="gap-4 flex justify-center md:justify-end my-4 md:my-10 h-5 md:h-10">
           {isLoggedIn ? (
             <>
               <Link to="/listings">
-                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 border hover:border-orange-400 border-white">
+                <button className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-400 border-white">
                   My Dish
                 </button>
               </Link>
               <Link to="/bookings">
-                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 border hover:border-orange-500 border-white">
+                <button className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
                   Food Request
                 </button>
               </Link>
               <Link to="/profile">
-                <button className=" w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 border hover:border-orange-500 border-white">
+                <button className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
                   My Profile
                 </button>
               </Link>
               <button
                 onClick={logout}
-                className="w-32 h-10 items-center font-bold text-white text-xs md:text-base my-10 border hover:border-orange-500 border-white"
+                className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white"
               >
                 Log Out
               </button>
@@ -52,17 +52,17 @@ function Nav() {
           ) : (
             <>
               <Link to="/">
-                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 border hover:border-orange-500 border-white">
+                <button className="w-24 items-center md:font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
                   Home
                 </button>
               </Link>
               <Link to="/login">
-                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 border hover:border-orange-500 border-white">
+                <button className="w-24 items-center md:font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
                   Log In
                 </button>
               </Link>
               <Link to="/signup">
-                <button className=" w-24 h-10 items-center font-bold text-white text-xs md:text-base my-10 border hover:border-orange-500 border-white">
+                <button className=" w-24  items-center md:font-bold text-white text-xs md:text-base  border hover:border-orange-500 border-white">
                   Sign Up
                 </button>
               </Link>
