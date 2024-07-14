@@ -16,15 +16,15 @@ function Nav() {
   }
   return (
     <div>
-      <div className="absolute inset-0 grid grid-cols-2 gap-10 justify-between content-start mr-20 ml-14">
+      <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 md:gap-10 md:justify-between content-start md:mr-20 md:ml-14">
         <Link to="/">
           <img
             src="https://i.postimg.cc/QNw0m4dK/foodsw-ap-inline.png"
             alt="foodswap logo"
-            className="pt-5 h-36 hover:animate-pulse"
+            className="pt-5 h-20 md:h-36 hover:animate-pulse"
           />
         </Link>
-        <div className="gap-4 flex justify-end">
+        <div className="gap-4 flex justify-center md:justify-end">
           {isLoggedIn ? (
             <>
               <Link to="/listings">
