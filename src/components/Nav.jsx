@@ -28,23 +28,23 @@ function Nav() {
           {isLoggedIn ? (
             <>
               <Link to="/listings">
-                <button className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-400 border-white">
+                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs md:text-xl border border-white hover:border-orange-400">
                   My Dish
                 </button>
               </Link>
               <Link to="/bookings">
-                <button className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
+                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs md:text-xl border border-white hover:border-orange-400">
                   Food Request
                 </button>
               </Link>
               <Link to="/profile">
-                <button className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
+                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs md:text-xl border border-white hover:border-orange-400">
                   My Profile
                 </button>
               </Link>
               <button
                 onClick={logout}
-                className="w-32 items-center font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white"
+                className="py-1 md:py-2 px-5 font-serif text-white text-xs md:text-xl border border-white hover:border-orange-400"
               >
                 Log Out
               </button>
@@ -52,17 +52,17 @@ function Nav() {
           ) : (
             <>
               <Link to="/">
-                <button className="w-24 items-center md:font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
+                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs md:text-xl border border-white hover:border-orange-400">
                   Home
                 </button>
               </Link>
               <Link to="/login">
-                <button className="w-24 items-center md:font-bold text-white text-xs md:text-base border hover:border-orange-500 border-white">
+                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs md:text-xl border border-white hover:border-orange-400">
                   Log In
                 </button>
               </Link>
               <Link to="/signup">
-                <button className=" w-24  items-center md:font-bold text-white text-xs md:text-base  border hover:border-orange-500 border-white">
+                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs md:text-xl border border-white hover:border-orange-400">
                   Sign Up
                 </button>
               </Link>
