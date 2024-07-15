@@ -44,8 +44,9 @@ function Footer() {
           <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
           {/* Delivery Text box */}
           <div className="gap-2">
-            <div className="relative text-white text-3xl font-serif tracking-wide">
-              Fast, Fresh, and Fabulous - That's Our Promise!
+            <div className="relative grid grid-rows-3 text-white text-xl md:text-3xl font-serif tracking-wide text-center">
+              <div>Fast, Fresh, and Fabulous</div>
+              <div>That's Our Promise!</div>
             </div>
             <div className="flex text-center gap-2 items-center justify-center">
               <FontAwesomeIcon
