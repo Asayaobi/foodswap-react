@@ -17,19 +17,17 @@ function Footer() {
           }}
         >
           <div className="absolute inset-0 bg-slate-800 opacity-60"></div>
-
           {/* Footer Text */}
-          <div className="flex">
-            <div className="relative text-slate-300">
-              © 2024 FOOD SWAP PROJECT BY
+          <div className="grid text-center text-xs md:text-sm">
+            <div className="flex">
+              <div className="relative text-slate-300">
+                © 2024 FOOD SWAP PROJECT BY
+              </div>
+              <Link to="https://portfolio-asaya.onrender.com">
+                <div className="relative text-slate-50 px-2">ASAYAOBI</div>
+              </Link>
             </div>
-            <Link to="https://portfolio-asaya.onrender.com">
-              <div className="relative text-slate-50 px-2">ASAYAOBI</div>
-            </Link>
-            <div className="relative text-slate-300">
-              {' '}
-              ▲ ALL RIGHTS RESERVED
-            </div>
+            <div className="relative text-slate-300">ALL RIGHTS RESERVED</div>
           </div>
         </div>
       ) : (
@@ -64,17 +62,16 @@ function Footer() {
             </div>
           </div>
           {/* Footer Text */}
-          <div className="flex">
-            <div className="relative text-slate-300">
-              © 2024 FOOD SWAP PROJECT BY
+          <div className="grid text-center text-xs md:text-sm">
+            <div className="flex">
+              <div className="relative text-slate-300">
+                © 2024 FOOD SWAP PROJECT BY
+              </div>
+              <Link to="https://portfolio-asaya.onrender.com">
+                <div className="relative text-slate-50 px-2">ASAYAOBI</div>
+              </Link>
             </div>
-            <Link to="https://portfolio-asaya.onrender.com">
-              <div className="relative text-slate-50 px-2">ASAYAOBI</div>
-            </Link>
-            <div className="relative text-slate-300">
-              {' '}
-              ▲ ALL RIGHTS RESERVED
-            </div>
+            <div className="relative text-slate-300">ALL RIGHTS RESERVED</div>
           </div>
         </div>
       )}
