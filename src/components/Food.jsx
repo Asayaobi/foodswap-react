@@ -34,8 +34,8 @@ function Food() {
         }}
       ></div>
       <Nav />
-      <div className="flex justify-center mx-72 my-24">
-        <div className="grid grid-cols-2 mx-36">
+      <div className="flex justify-center md:mx-72 my-24">
+        <div className="grid md:grid-cols-2 mx-4 md:mx-36">
           {/* Gallery */}
           <div className="grid grid-rows-3 place-items-start">
             <div className="grid row-span-2 aspect-square">
