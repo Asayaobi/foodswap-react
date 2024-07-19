@@ -34,8 +34,8 @@ function Food() {
         }}
       ></div>
       <Nav />
-      <div className="flex justify-center md:mx-72 my-24">
-        <div className="grid md:grid-cols-2 mx-4 md:mx-36">
+      <div className="flex justify-center lg:mx-72 my-24">
+        <div className="grid lg:grid-cols-2 mx-4 md:mx-10 lg:mx-36">
           {/* Gallery */}
           <div className="grid grid-rows-3 place-items-start">
             <div className="grid row-span-2 aspect-square">
@@ -45,7 +45,7 @@ function Food() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-3 gap-2 mt-12">
+            <div className="grid grid-cols-3 gap-2 mt-3 lg:mt-12">
               {food.images &&
                 food.images.slice(1).map((image, index) => (
                   <div key={index}>
