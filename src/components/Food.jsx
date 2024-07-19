@@ -34,7 +34,7 @@ function Food() {
         }}
       ></div>
       <Nav />
-      <div className="flex justify-center lg:mx-72 my-24">
+      <div className="flex justify-center my-14 lg:mx-72 lg:my-24">
         <div className="grid lg:grid-cols-2 mx-4 md:mx-10 lg:mx-36">
           {/* Gallery */}
           <div className="grid grid-rows-3 place-items-start">
@@ -62,9 +62,9 @@ function Food() {
             </div>
           </div>
           {/* Text */}
-          <div className="items-center ml-10">
+          <div className="items-center ml-4 md:ml-6 lg:ml-10">
             <div className="gap-4">
-              <div className=" text-4xl font-serif font-extrabold">
+              <div className="text-2xl md:text-4xl font-serif font-extrabold">
                 {food.food_title}
               </div>
               <div className="text-xl font-serif font-extrabold text-slate-500">
