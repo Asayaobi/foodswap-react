@@ -64,9 +64,7 @@ function Reviews() {
         </div>
         {/* average rating */}
         <div className="flex">
-          <div className="text-lg lg:text-xl font-serif font-bold mr-3">
-            RATING
-          </div>
+          <div className="lg:text-xl font-serif font-bold mr-3">RATING</div>
           <div>
             {reviews.length > 0 ? (
               [...Array(averageRating)].map((_, index) => (
@@ -88,7 +86,7 @@ function Reviews() {
             <div className="text-xl lg:text-2xl font-serif font-bold">
               Leave a comment
             </div>
-            <div className=" gap-3 space-x-2">
+            <div className="gap-3 space-x-2">
               <label>Taste Rating</label>
               {[1, 2, 3, 4, 5].map((star) => (
                 <label key={star} className="cursor-pointer">
@@ -142,7 +140,7 @@ function Review({ review }) {
   return (
     <>
       <div>
-        <div className="flex gap-5">
+        <div className="flex lg:gap-5">
           <div>
             <img
               src={review.author.profile_image}
@@ -151,7 +149,7 @@ function Review({ review }) {
             />
           </div>
           <div>
-            <div className="flex gap-2 text-xl font-bold">
+            <div className="flex gap-2 text-lg lg:text-xl font-bold">
               <div>{review.author.firstname}</div>
               <div>{review.author.lastname}</div>
             </div>
