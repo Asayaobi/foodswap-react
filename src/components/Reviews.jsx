@@ -85,7 +85,9 @@ function Reviews() {
         {/* form */}
         <form onSubmit={postReview}>
           <div className=" my-10 space-y-4">
-            <div className="text-2xl font-serif font-bold">Leave a comment</div>
+            <div className="text-xl lg:text-2xl font-serif font-bold">
+              Leave a comment
+            </div>
             <div className=" gap-3 space-x-2">
               <label>Taste Rating</label>
               {[1, 2, 3, 4, 5].map((star) => (
