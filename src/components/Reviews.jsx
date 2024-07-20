@@ -56,8 +56,8 @@ function Reviews() {
     <Review key={review.review_id} review={review} />
   ))
   return (
-    <div className="mx-44">
-      <div className="grid px-20 py-10 gap-4">
+    <div>
+      <div className="grid px-20 lg:py-10 gap-4">
         {/* total reviews */}
         <div className="underline underline-offset-[70px] text-2xl font-serif font-bold">
           REVIEWS ({reviews.length})
