@@ -59,12 +59,14 @@ function Reviews() {
     <div>
       <div className="grid px-20 lg:py-10 gap-4">
         {/* total reviews */}
-        <div className="underline underline-offset-[70px] text-2xl font-serif font-bold">
+        <div className="lg:underline lg:underline-offset-[70px] text-xl lg:text-2xl font-serif font-bold">
           REVIEWS ({reviews.length})
         </div>
         {/* average rating */}
         <div className="flex">
-          <div className="text-xl font-serif font-bold mr-3">RATING</div>
+          <div className="text-lg lg:text-xl font-serif font-bold mr-3">
+            RATING
+          </div>
           <div>
             {reviews.length > 0 ? (
               [...Array(averageRating)].map((_, index) => (
