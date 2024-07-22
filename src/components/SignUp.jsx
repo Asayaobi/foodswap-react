@@ -64,8 +64,8 @@ function SignUp() {
     }
   }
   return (
-    <div className="flex">
-      <div className=" w-1/2">
+    <div className="flex flex-col lg:flex-row">
+      <div className="hidden lg:block lg:w-1/2">
         <img
           src="https://i.postimg.cc/fR70p2B5/Screenshot-2567-06-02-at-19-32-35.png"
           alt="kitchen"
@@ -73,12 +73,12 @@ function SignUp() {
         />
       </div>
       <div
-        className="relative flex justify-center items-center w-1/2"
+        className="relative w-full lg:w-1/2"
         style={{
           backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
         }}
       >
-        <div className="absolute bg-white opacity-90 space-y-2 border rounded pb-10 pt-8 m-24">
+        <div className="absolute bg-white opacity-90 space-y-2 border rounded py-5 lg:py-8 m-4 md:m-10 lg:m-24">
           <div className="flex justify-center">
             <Link to="/">
               <img
