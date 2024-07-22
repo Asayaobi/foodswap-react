@@ -84,12 +84,15 @@ function SignUp() {
               <img
                 src="https://i.postimg.cc/QNybcRwy/cleaned-inline-orange-logo-with-black-text.png"
                 alt="foodswap logo"
-                className="h-40"
+                className="h-20 sm:h-30 lg:h-40"
               />
             </Link>
           </div>
           {/* Sign Up Form */}
-          <form onSubmit={(e) => submitForm(e)} className="px-44">
+          <form
+            onSubmit={(e) => submitForm(e)}
+            className="px-8 md:px-28 lg:px-44"
+          >
             <div className="py-3">Name</div>
             <div className=" grid grid-cols-3 gap-3">
               <input
