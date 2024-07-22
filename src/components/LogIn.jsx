@@ -38,9 +38,9 @@ function LogIn() {
     }
   }
   return (
-    <div className="flex">
+    <div className="flex flex-col lg:flex-row">
       {/* Kitchen image */}
-      <div className=" w-1/2">
+      <div className="hidden lg:block lg:w-1/2">
         <img
           src="https://i.postimg.cc/fR70p2B5/Screenshot-2567-06-02-at-19-32-35.png"
           alt="kitchen"
@@ -49,7 +49,7 @@ function LogIn() {
       </div>
       {/* Login Elements */}
       <div
-        className="relative flex justify-center items-center bg-slate-200 w-1/2"
+        className="relative flex justify-center items-center w-full lg:w-1/2"
         style={{
           backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
         }}
