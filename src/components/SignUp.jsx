@@ -73,9 +73,12 @@ function SignUp() {
         />
       </div>
       <div
-        className="relative w-full lg:w-1/2"
+        className="relative flex justify-center items-center w-full lg:w-1/2 h-screen"
         style={{
-          backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
+          backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`,
+          backgroundSize: 'auto',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat'
         }}
       >
         <div className="absolute bg-white opacity-90 space-y-2 border rounded py-5 lg:py-8 m-4 md:m-10 lg:m-24">
