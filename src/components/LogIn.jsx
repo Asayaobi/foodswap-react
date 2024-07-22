@@ -92,10 +92,10 @@ function LogIn() {
               Log In
             </button>
           </form>
-          <div className="flex mt-7 justify-center text-sm gap-3">
-            <div className="">New to Food Swap ?</div>
+          <div className="flex flex-col md:flex-row mt-4 lg:mt-7 justify-center text-sm md:gap-3">
+            <div className="text-center">New to Food Swap ?</div>
             <Link to="/SignUp">
-              <div className="text-amber-600 hover:text-orange-700">
+              <div className="text-amber-600 hover:text-orange-700 text-center">
                 Create an account here
               </div>
             </Link>
