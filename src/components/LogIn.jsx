@@ -57,14 +57,17 @@ function LogIn() {
           backgroundRepeat: 'repeat'
         }}
       >
-        <div className="absolute bg-white opacity-90 border rounded m-24 px-20 py-20 pt-14">
-          <Link to="/">
-            <img
-              src="https://i.postimg.cc/QNybcRwy/cleaned-inline-orange-logo-with-black-text.png"
-              alt="foodswap logo"
-              className="h-40"
-            />
-          </Link>
+        <div className="absolute bg-white opacity-90 border rounded m-10 lg:m-24 px-5 py-5 lg:px-20 lg:py-20">
+          <div className="flex justify-center">
+            <Link to="/">
+              <img
+                src="https://i.postimg.cc/QNybcRwy/cleaned-inline-orange-logo-with-black-text.png"
+                alt="foodswap logo"
+                className="h-20 sm:h-30 lg:h-40"
+              />
+            </Link>
+          </div>
+
           {/* Log In Form */}
           <form onSubmit={(e) => submitForm(e)}>
             <div className="py-3">
