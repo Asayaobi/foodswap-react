@@ -49,9 +49,12 @@ function LogIn() {
       </div>
       {/* Login Elements */}
       <div
-        className="relative flex justify-center items-center w-full lg:w-1/2"
+        className="relative flex justify-center items-center w-full lg:w-1/2 h-screen"
         style={{
-          backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`
+          backgroundImage: `url(https://www.paste-juice.com/assets/images/inerpage_2-1-2018.png)`,
+          backgroundSize: 'auto',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat'
         }}
       >
         <div className="absolute bg-white opacity-90 border rounded m-24 px-20 py-20 pt-14">
