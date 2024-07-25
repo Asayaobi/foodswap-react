@@ -23,7 +23,7 @@ function Header() {
           <img
             src="https://i.postimg.cc/YCX959b8/foodsw-ap-transparent-001.png"
             alt="logo"
-            className="h-16 md:h-24 lg:h-48"
+            className="hidden lg:block lg:h-48"
           />
         </div>
       </div>
