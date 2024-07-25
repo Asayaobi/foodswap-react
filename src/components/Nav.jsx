@@ -24,27 +24,27 @@ function Nav() {
             className="pt-5 h-20 md:h-36 hover:animate-pulse"
           />
         </Link>
-        <div className="flex flex-col lg:flex-row lg:justify-end  lg:my-4 lg:h-5 lg:gap-4">
+        <div className="justify-self-end flex flex-col mt-2 lg:flex-row lg:justify-end lg:my-4 lg:h-5 gap-1 lg:gap-4">
           {isLoggedIn ? (
             <>
               <Link to="/listings">
-                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400">
+                <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center">
                   My Dish
                 </button>
               </Link>
               <Link to="/bookings">
-                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400">
+                <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center">
                   Food Request
                 </button>
               </Link>
               <Link to="/profile">
-                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400">
+                <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center">
                   My Profile
                 </button>
               </Link>
               <button
                 onClick={logout}
-                className="py-1 md:py-2 lg:py-6 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center"
+                className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center"
               >
                 Log Out
               </button>
