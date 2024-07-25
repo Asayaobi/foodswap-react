@@ -52,17 +52,17 @@ function Nav() {
           ) : (
             <>
               <Link to="/">
-                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400">
+                <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center mt-4 lg:mt-0">
                   Home
                 </button>
               </Link>
               <Link to="/login">
-                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400">
+                <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center">
                   Log In
                 </button>
               </Link>
               <Link to="/signup">
-                <button className="py-1 md:py-2 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400">
+                <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center">
                   Sign Up
                 </button>
               </Link>
