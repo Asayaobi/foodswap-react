@@ -16,7 +16,7 @@ function Nav() {
   }
   return (
     <div>
-      <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 md:gap-10 md:justify-between content-start lg:mr-20 md:mr-3 lg:ml-14">
+      <div className="absolute inset-0 grid grid-cols-2 justify-between lg:mr-20 mr-3 lg:ml-14">
         <Link to="/">
           <img
             src="https://i.postimg.cc/QNw0m4dK/foodsw-ap-inline.png"
@@ -24,7 +24,7 @@ function Nav() {
             className="pt-5 h-20 md:h-36 hover:animate-pulse"
           />
         </Link>
-        <div className="gap-4 flex justify-center md:justify-end my-4 md:my-10 h-5 md:h-10">
+        <div className="flex flex-col lg:flex-row lg:justify-end  lg:my-4 lg:h-5 lg:gap-4">
           {isLoggedIn ? (
             <>
               <Link to="/listings">
@@ -44,7 +44,7 @@ function Nav() {
               </Link>
               <button
                 onClick={logout}
-                className="py-1 md:py-2 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400"
+                className="py-1 md:py-2 lg:py-6 px-5 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center"
               >
                 Log Out
               </button>
