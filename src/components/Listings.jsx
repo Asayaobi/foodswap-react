@@ -64,12 +64,14 @@ function Listings() {
     <>
       <div className="relative h-screen">
         <div className="absolute inset-0 bg-[url('https://preview.codeless.co/picante/default/wp-content/uploads/2018/07/home02_03-compressed.jpg')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="absolute inset-0 flex md:items-center md:justify-center z-10">
           <Nav />
-          <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg max-w-4xl w-full">
-            <h1 className="text-2xl font-bold mb-8 font-serif">My Dish</h1>
+          <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg mx-2 max-w-4xl w-full mt-40 md:mt-0">
+            <h1 className="text-2xl font-bold mb-2 md:mb-8 font-serif">
+              My Dish
+            </h1>
             <form onSubmit={(e) => submitForm(e)}>
-              <div className="grid grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 md:gap-8">
                 <div>
                   <div className="mb-4">
                     <label className="block mb-2">Dish Name</label>
