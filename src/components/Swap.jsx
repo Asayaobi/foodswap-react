@@ -37,14 +37,14 @@ function Swap({ foodId }) {
     }
   }
   return (
-    <div className=" text-center px-4">
+    <div className="text-center px-4">
       <form onSubmit={(e) => submitForm(e)}>
         {!swap ? (
-          <button className=" bg-yellow-500 text-white w-full hover:bg-yellow-700 tracking-widest py-5 rounded-md">
+          <button className="relative z-50 bg-yellow-500 text-white w-full hover:bg-yellow-700 tracking-widest py-5 rounded-md">
             REQUEST TO SWAP
           </button>
         ) : (
-          <div className=" bg-green-500 text-white w-full hover:bg-yellow-700 tracking-widest py-5 rounded-md">
+          <div className="relative z-50 bg-green-500 text-white w-full hover:bg-yellow-700 tracking-widest py-5 rounded-md">
             REQUEST SENT
           </div>
         )}
