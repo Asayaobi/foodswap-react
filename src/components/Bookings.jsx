@@ -54,11 +54,11 @@ function Bookings() {
           backgroundImage: `url(https://preview.codeless.co/picante/default/wp-content/uploads/2018/07/home02-compressed.jpg)`
         }}
       >
-        <div className="bg-slate-100 p-8 opacity-90 mx-24 rounded shadow-lg">
+        <div className="bg-slate-100 p-8 opacity-90 mx-2 lg:mx-24 rounded shadow-lg">
           <h1 className="text-2xl font-bold mb-8 font-serif">
             Incoming Swap Request
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-36">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:mx-36">
             {request && request.length > 0 ? (
               request.map((food, index) => (
                 <Card key={index} food={food} isRequested={true} />
@@ -70,12 +70,12 @@ function Bookings() {
         </div>
       </div>
       {/* Booking Status Section */}
-      <div className="py-40 bg-slate-100">
-        <div className="bg-white p-8 opacity-90 mx-24 rounded shadow-lg">
+      <div className="py-4 lg:py-40 bg-slate-100">
+        <div className="bg-white p-8 opacity-90 mx-2 lg:mx-24 rounded shadow-lg">
           <h1 className="text-2xl font-bold mb-8 font-serif">
             Your Swap Request Status
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-36">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:mx-36">
             {bookings && bookings.length > 0 ? (
               bookings.map((food, index) => (
                 <Card key={index} food={food} isBooking={true} />
