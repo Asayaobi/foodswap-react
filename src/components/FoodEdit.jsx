@@ -45,12 +45,12 @@ function FoodEdit() {
 
   return (
     <>
-      <div className="relative h-screen">
+      <div className="min-h-screen">
         <div className="absolute inset-0 bg-[url('https://preview.codeless.co/picante/default/wp-content/uploads/2018/07/home02_03-compressed.jpg')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-center">
           <Nav />
-          <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg max-w-4xl w-full">
-            <h1 className="text-2xl font-bold mb-8 font-serif">
+          <div className="bg-slate-100 p-8 opacity-90 rounded shadow-lg max-w-4xl w-full  mt-40 mb-8">
+            <h1 className="text-2xl font-bold mb-2 md:mb-8 font-serif">
               Edit this Dish
             </h1>
             <form onSubmit={patchFood}>
