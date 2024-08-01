@@ -22,9 +22,7 @@ function FoodEdit() {
 
   const deleteFood = async () => {
     try {
-      let { data } = await axios.delete(
-        `http://localhost:4000/food/${params.id}`
-      )
+      await axios.delete(`http://localhost:4000/food/${params.id}`)
       navigate('/listings')
     } catch (err) {
       console.error(err.message)
@@ -136,15 +134,15 @@ function FoodEdit() {
                           placeholder={image}
                         />
                       ))}
-                    <div className="flex justify-end gap-2">
+                    <div className="flex flex-col md:flex-row justify-end gap-2">
                       <button
                         type="button"
                         onClick={deleteFood}
-                        className="bg-red-500 hover:bg-orange-300 text-white mt-2 py-3 px-8 tracking-widest rounded-sm"
+                        className="bg-red-500 hover:bg-orange-300 text-white mt-2 py-3 px-7 tracking-widest rounded-sm"
                       >
                         DELETE THIS DISH
                       </button>
-                      <button className="bg-orange-500 hover:bg-orange-300 text-white mt-2 py-3 px-8 tracking-widest rounded-sm">
+                      <button className="bg-orange-500 hover:bg-orange-300 text-white mt-2 py-3 px-10 tracking-widest rounded-sm">
                         EDIT THIS DISH
                       </button>
                     </div>
