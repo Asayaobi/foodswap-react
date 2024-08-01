@@ -19,7 +19,7 @@ function Nav() {
       <div className="absolute inset-0 grid grid-cols-2 justify-between lg:mr-20 mr-3 lg:ml-14">
         <Link to="/">
           <img
-            src="https://i.postimg.cc/QNw0m4dK/foodsw-ap-inline.png"
+            src="https://i.ibb.co/RvQ6jQs/foodswap-inline.png"
             alt="foodswap logo"
             className="pt-5 h-20 md:h-36 hover:animate-pulse"
           />
