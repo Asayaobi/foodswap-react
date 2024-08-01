@@ -21,7 +21,7 @@ function Header() {
         {/* header for front page */}
         <div className=" absolute inset-0 flex items-center justify-center">
           <img
-            src="https://i.postimg.cc/YCX959b8/foodsw-ap-transparent-001.png"
+            src="https://i.ibb.co/Ms5DnLc/foodswap-transparent-001.png"
             alt="logo"
             className="hidden lg:block lg:h-48"
           />
