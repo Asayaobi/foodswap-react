@@ -11,7 +11,7 @@ function Footer() {
         <div
           className="relative h-20 grid place-items-center gap-2"
           style={{
-            backgroundImage: `url(https://i.postimg.cc/3wJTSmyL/dietary-salad-with-mussels-quail-eggs-cucumbers-radish-lettuce-healthy-food-seafood-salad-top-view-f.jpg)`,
+            backgroundImage: `url(https://i.ibb.co/5FnP9Dm/footer-background.jpg)`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
           }}
