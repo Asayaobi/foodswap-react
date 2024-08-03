@@ -18,7 +18,10 @@ function Card(props) {
         swap: e.target.value
       }
       console.log('formObject', formObject)
-      let { data } = await axios.patch('http://localhost:4000/swap', formObject)
+      let { data } = await axios.patch(
+        `${process.env.REACT_APP_API_URL}/swap`,
+        formObject
+      )
       console.log('response data', data)
       window.location.reload()
     } catch (error) {
