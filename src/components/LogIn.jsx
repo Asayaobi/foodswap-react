@@ -23,7 +23,7 @@ function LogIn() {
       // 5. log the object to see what's inside
       console.log(formObject)
       const { data } = await axios.post(
-        'http://localhost:4000/login',
+        `${process.env.REACT_APP_API_URL}/login`,
         formObject
       )
       if (data.error) {
