@@ -8,7 +8,7 @@ function Profile() {
   const [user, setUser] = useState({})
   const getUser = async () => {
     try {
-      let { data } = await axios.get('http://localhost:4000/profile')
+      let { data } = await axios.get(`${process.env.REACT_APP_API_URL}/profile`)
       setUser(data)
     } catch (err) {
       console.error(err.message)
@@ -19,7 +19,7 @@ function Profile() {
       e.preventDefault()
       const form = new FormData(e.target)
       const formObject = Object.fromEntries(form.entries())
-      await axios.patch('http://localhost:4000/profile', formObject)
+      await axios.patch(`${process.env.REACT_APP_API_URL}/profile`, formObject)
       window.location.reload()
     } catch (err) {
       console.error(err.message)
