@@ -8,7 +8,9 @@ function Nav() {
 
   const logout = async (e) => {
     try {
-      const { data } = await axios.get('http://localhost:4000/logout')
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}/logout`
+      )
       console.log({ data })
       localStorage.removeItem('isLoggedIn')
       navigate('/')
