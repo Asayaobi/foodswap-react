@@ -18,7 +18,7 @@ function Reviews() {
       formObject.food_id = id
       console.log(formObject)
       let { data } = await axios.post(
-        'http://localhost:4000/reviews/',
+        `${process.env.REACT_APP_API_URL}/reviews/`,
         formObject
       )
       if (data.error) {
@@ -34,7 +34,7 @@ function Reviews() {
   const [selectedRating, setSelectedRating] = useState(0)
   const getReviews = async () => {
     let { data } = await axios.get(
-      `http://localhost:4000/reviews?food_id=${id}`
+      `${process.env.REACT_APP_API_URL}/reviews?food_id=${id}`
     )
     setReviews(data)
   }
