@@ -15,7 +15,7 @@ function Swap({ foodId }) {
     try {
       e.preventDefault()
       const { data } = await axios.post(
-        'http://localhost:4000/bookings',
+        `${process.env.REACT_APP_API_URL}/bookings`,
         formObject
       )
       if (data.error) {
