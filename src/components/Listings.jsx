@@ -23,7 +23,7 @@ function Listings() {
       }
       console.log(formObject)
       const { data } = await axios.post(
-        'http://localhost:4000/food',
+        `${process.env.REACT_APP_API_URL}/food`,
         formObject
       )
       console.log('response data', data)
@@ -44,7 +44,9 @@ function Listings() {
   }
   const getListings = async () => {
     try {
-      let { data } = await axios.get('http://localhost:4000/listings')
+      let { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}/listings`
+      )
       if (!data.error && Array.isArray(data)) {
         setListings(data)
       } else {
