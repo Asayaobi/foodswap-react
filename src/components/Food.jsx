@@ -14,7 +14,9 @@ function Food() {
   const { id } = useParams()
 
   const getFood = async () => {
-    let { data } = await axios.get(`http://localhost:4000/food/${id}`)
+    let { data } = await axios.get(
+      `${process.env.REACT_APP_API_URL}/food/${id}`
+    )
     setFood(data)
   }
   useEffect(() => {
