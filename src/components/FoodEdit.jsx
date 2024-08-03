@@ -12,7 +12,9 @@ function FoodEdit() {
 
   const getFood = async () => {
     try {
-      let { data } = await axios.get(`http://localhost:4000/food/${params.id}`)
+      let { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}/food/${params.id}`
+      )
       console.log('response from get edit', data)
       if (!data.error) setFood(data)
     } catch (err) {
@@ -22,7 +24,7 @@ function FoodEdit() {
 
   const deleteFood = async () => {
     try {
-      await axios.delete(`http://localhost:4000/food/${params.id}`)
+      await axios.delete(`${process.env.REACT_APP_API_URL}/food/${params.id}`)
       navigate('/listings')
     } catch (err) {
       console.error(err.message)
@@ -41,7 +43,10 @@ function FoodEdit() {
         images: new FormData(e.target).getAll('image')
       }
       console.log('patch form object', formObject)
-      await axios.patch(`http://localhost:4000/food/${params.id}`, formObject)
+      await axios.patch(
+        `${process.env.REACT_APP_API_URL}/food/${params.id}`,
+        formObject
+      )
       navigate('/listings')
     } catch (err) {
       console.error(err.message)
