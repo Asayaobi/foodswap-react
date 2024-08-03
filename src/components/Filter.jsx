@@ -8,15 +8,15 @@ function Filter({ setFoodList }) {
   const formRef = useRef(null) // Reference to the form element
 
   const getCities = async () => {
-    let { data } = await axios.get(`http://localhost:4000/city`)
+    let { data } = await axios.get(`${process.env.REACT_APP_API_URL}/city`)
     setCities(data)
   }
   const getCountries = async () => {
-    let { data } = await axios.get(`http://localhost:4000/country`)
+    let { data } = await axios.get(`${process.env.REACT_APP_API_URL}/country`)
     setCountries(data)
   }
   const getCategories = async () => {
-    let { data } = await axios.get(`http://localhost:4000/category`)
+    let { data } = await axios.get(`${process.env.REACT_APP_API_URL}/category`)
     setCategories(data)
   }
   //function to prevent default then get data to api
@@ -38,7 +38,7 @@ function Filter({ setFoodList }) {
       if (e.target.search.value) {
         queryArray.push(`search=${e.target.search.value}`)
       }
-      let url = `http://localhost:4000/food?${queryArray.join('&')}`
+      let url = `${process.env.REACT_APP_API_URL}/food?${queryArray.join('&')}`
       const { data } = await axios.get(url)
       if (data.error) {
         setErrorMessage(data.error)
