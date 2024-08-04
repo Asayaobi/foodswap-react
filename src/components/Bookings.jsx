@@ -11,7 +11,7 @@ function Bookings() {
   const [bookings, setBookings] = useState([])
   const getFoodRequest = async () => {
     try {
-      let { data } = await axios.get('http://localhost:4000/request')
+      let { data } = await axios.get(`${process.env.REACT_APP_API_URL}/request`)
       console.log('request', data)
       if (!data.error && Array.isArray(data)) {
         setRequest(data)
@@ -25,7 +25,9 @@ function Bookings() {
   }
   const getBookings = async () => {
     try {
-      let { data } = await axios.get('http://localhost:4000/bookings')
+      let { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}/bookings`
+      )
       console.log('booking status', data)
       if (!data.error) {
         setBookings(data)
