@@ -57,7 +57,7 @@ function Header() {
                 recipe or experimenting with new flavors in your kitchen
                 laboratory, there's a place for you here.
               </div>
-              <div>
+              <div className="font-bold italic">
                 Come, explore, and indulge in the delicious diversity of
                 homemade meals. Together, let's create a symphony of flavors,
                 one swap at a time!
