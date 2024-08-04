@@ -83,7 +83,7 @@ function Filter({ setFoodList }) {
             name="country"
             className="border border-gray-300 rounded w-full p-2"
           >
-            <option value="">Cuisine Type</option>
+            <option value="">Culinary Style</option>
             {countries &&
               countries.map((country, index) => (
                 <option key={index} value={country}>
@@ -96,7 +96,7 @@ function Filter({ setFoodList }) {
             name="category"
             className="border border-gray-300 rounded w-full p-2"
           >
-            <option value="">Course Category</option>
+            <option value="">Meal Course</option>
             {categories &&
               categories.map((category, index) => (
                 <option key={index} value={category}>
