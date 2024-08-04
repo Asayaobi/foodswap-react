@@ -57,7 +57,7 @@ function Footer() {
             </div>
             <div className="flex justify-center pt-4">
               <button className="relative py-2 px-5 font-serif text-white text-xl border border-white hover:border-orange-400">
-                <Link to="/login">Order Now</Link>
+                <Link to="/signup">Join Now</Link>
               </button>
             </div>
           </div>
