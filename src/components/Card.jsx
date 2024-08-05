@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
 import axios from 'axios'
@@ -17,13 +17,8 @@ function Card(props) {
         booking_id: bookingId,
         swap: e.target.value
       }
-      console.log('formObject', formObject)
-      let { data } = await axios.patch(
-        `${process.env.REACT_APP_API_URL}/swap`,
-        formObject
-      )
-      console.log('response data', data)
-      window.location.reload()
+      await axios.patch(`${process.env.REACT_APP_API_URL}/swap`, formObject)
+      navigate('/listings')
     } catch (error) {
       console.error(error)
     }
