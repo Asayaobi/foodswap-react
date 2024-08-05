@@ -8,7 +8,7 @@ function Card(props) {
   const isListing = props.isListing
   const isBooking = props.isBooking
   const isRequested = props.isRequested
-  console.log('props', foodlist)
+  const navigate = useNavigate()
 
   //update swap request
   const updateSwapStatus = async (e, bookingId) => {
