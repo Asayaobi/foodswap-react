@@ -84,7 +84,7 @@ function Reviews() {
         </div>
         <hr />
         {/* form */}
-        <form onSubmit={postReview}>
+        <form onSubmit={postReview} ref={formRef}>
           <div className=" my-10 space-y-4">
             <div className="text-xl lg:text-2xl font-serif font-bold">
               Leave a comment
