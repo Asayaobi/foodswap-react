@@ -24,7 +24,7 @@ function Reviews() {
       if (data.error) {
         setErrorMessage(data.error)
       } else {
-        window.location.reload()
+        getReviews()
       }
     } catch (err) {
       console.error(err.message)
