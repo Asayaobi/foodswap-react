@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-regular-svg-icons'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 axios.defaults.withCredentials = true
 
@@ -9,6 +9,7 @@ function Reviews() {
   const { id } = useParams()
   const [reviews, setReviews] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
+  const formRef = useRef(null) // Reference to the form
 
   const postReview = async (e) => {
     try {
@@ -24,7 +25,9 @@ function Reviews() {
       if (data.error) {
         setErrorMessage(data.error)
       } else {
-        getReviews()
+        getReviews() // Refresh the reviews after a successful post
+        formRef.current.reset() // Clear the form
+        setSelectedRating(0) // Reset the rating
       }
     } catch (err) {
       console.error(err.message)
