@@ -43,7 +43,7 @@ function Reviews() {
   }
   useEffect(() => {
     getReviews()
-  }, [])
+  }, [id]) // include id as a dependency to refetch reviews when id changes
 
   const handleRatingChange = (rating) => {
     setSelectedRating(rating)
