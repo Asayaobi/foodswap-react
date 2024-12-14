@@ -26,11 +26,10 @@ function Footer() {
               <div className="relative text-slate-300">
                 © {thisYear} FOOD SWAP PROJECT BY
               </div>
-              <Link to="https://portfolio-asaya.onrender.com">
-                <div className="relative text-slate-50 px-2">ASAYAOBI</div>
+              <Link to="https://asayaobi.github.io/portfolio/">
+                <div className="relative text-slate-50 px-2">Asaya G.</div>
               </Link>
             </div>
-            <div className="relative text-slate-300">ALL RIGHTS RESERVED</div>
           </div>
         </div>
       ) : (
