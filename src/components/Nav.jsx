@@ -53,11 +53,6 @@ function Nav() {
             </>
           ) : (
             <>
-              <Link to="/">
-                <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center mt-4 lg:mt-0">
-                  Home
-                </button>
-              </Link>
               <Link to="/login">
                 <button className="w-32 lg:h-12 py-1 md:py-2 font-serif text-white text-xs lg:text-xl border border-white hover:border-orange-400 flex items-center justify-center">
                   Log In
