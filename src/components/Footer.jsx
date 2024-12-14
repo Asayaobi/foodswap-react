@@ -5,6 +5,9 @@ function Footer() {
   const isLoggedIn = localStorage.getItem('isLoggedIn')
   console.log(isLoggedIn)
 
+  const thisYear = new Date().getFullYear()
+  // console.log(thisYear)
+
   return (
     <>
       {isLoggedIn ? (
@@ -21,7 +24,7 @@ function Footer() {
           <div className="grid text-center text-xs md:text-sm">
             <div className="flex">
               <div className="relative text-slate-300">
-                © 2024 FOOD SWAP PROJECT BY
+                © {thisYear} FOOD SWAP PROJECT BY
               </div>
               <Link to="https://portfolio-asaya.onrender.com">
                 <div className="relative text-slate-50 px-2">ASAYAOBI</div>
